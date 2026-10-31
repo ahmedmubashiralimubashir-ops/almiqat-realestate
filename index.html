@@ -33,18 +33,18 @@
             --hb-teal: #0D4B57;
             --hb-teal-dark: #082C34;
             --hb-teal-light: #166270;
-            --hb-dark: #1E293B;
-            --hb-slate: #334155;
-            --hb-muted: #64748B;
-            --hb-linen: #F6F6F0;
+            --hb-dark: #0F172A;
+            --hb-slate: #1E293B;
+            --hb-muted: #475569;
+            --hb-linen: #F8F7F2;
             --hb-porcelain: #FCFCFA;
             --hb-white: #FFFFFF;
-            --hb-border: #E2E8F0;
+            --hb-border: #DDE2E8;
             --hb-border-dark: #CBD5E1;
-            --hb-clay: #C56F4E;
+            --hb-clay: #B45309;
             --hb-gold: #B8914A;
             --hb-gold-light: #FBF8F2;
-            --hb-radius: 6px;
+            --hb-radius: 8px;
             --hb-font-serif: "PT Serif", Georgia, serif;
             --hb-font-sans: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             --hb-font-ar: "Tajawal", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -60,7 +60,7 @@
 
         html {
             font-size: 16px;
-            scroll-behavior: auto !important; /* Managed by Lenis */
+            scroll-behavior: auto !important;
             background-color: var(--hb-porcelain);
             color: var(--hb-dark);
             -webkit-font-smoothing: antialiased;
@@ -116,8 +116,8 @@
         .headline-display {
             font-family: var(--hb-font-serif);
             font-weight: 400;
-            line-height: 1.15;
-            letter-spacing: -0.025em;
+            line-height: 1.18;
+            letter-spacing: -0.02em;
             color: var(--hb-dark);
         }
 
@@ -130,8 +130,8 @@
 
         .section-eyebrow {
             display: inline-block;
-            font-size: 12px;
-            font-weight: 700;
+            font-size: 12.5px;
+            font-weight: 800;
             letter-spacing: 0.12em;
             text-transform: uppercase;
             color: var(--hb-clay);
@@ -141,7 +141,7 @@
         .section-headline {
             font-family: var(--hb-font-serif);
             font-size: clamp(28px, 4vw, 42px);
-            font-weight: 400;
+            font-weight: 700;
             line-height: 1.25;
             color: var(--hb-dark);
             letter-spacing: -0.015em;
@@ -149,17 +149,18 @@
 
         html[dir="rtl"] .section-headline {
             font-family: var(--hb-font-ar);
-            font-weight: 700;
+            font-weight: 800;
         }
 
         /* Masked Line Animation Container */
         .line-mask {
-            overflow: hidden;
             display: block;
+            position: relative;
         }
         .line-mask > span {
             display: block;
-            will-change: transform;
+            opacity: 1 !important;
+            visibility: visible !important;
         }
 
         /* Buttons & Pills */
@@ -170,7 +171,7 @@
             gap: 10px;
             padding: 14px 28px;
             border-radius: 40px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 15px;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -217,8 +218,8 @@
             padding: 7px 14px;
             border-radius: 30px;
             font-size: 13px;
-            font-weight: 600;
-            background: rgba(255, 255, 255, 0.85);
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.9);
             border: 1px solid var(--hb-border);
             color: var(--hb-dark);
             cursor: pointer;
@@ -233,7 +234,7 @@
         }
 
         /* ==========================================================================
-           2. HOMEBOUND NAVBAR
+           2. HOMEBOUND NAVBAR (Solid on Scroll, Clean English Logo)
            ========================================================================== */
         .hb-nav-header {
             position: fixed;
@@ -243,16 +244,16 @@
             height: 76px;
             z-index: 1000;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            background: rgba(252, 252, 250, 0.7);
+            background: rgba(252, 252, 250, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid transparent;
         }
 
         .hb-nav-header.scrolled {
-            background: rgba(255, 255, 255, 0.96);
+            background: rgba(255, 255, 255, 0.98);
             height: 70px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
             border-bottom: 1px solid var(--hb-border);
         }
 
@@ -266,16 +267,17 @@
             justify-content: space-between;
         }
 
-        /* Logo: English Only, Crisp */
+        /* Brand Link (English Only) */
         .hb-brand-link {
             display: flex;
             align-items: center;
             gap: 12px;
             text-decoration: none;
+            flex-shrink: 0;
         }
 
         .hb-logo-img {
-            height: 48px;
+            height: 46px;
             width: auto;
             object-fit: contain;
             transition: var(--hb-transition);
@@ -284,7 +286,7 @@
         .hb-brand-text {
             display: flex;
             flex-direction: column;
-            line-height: 1.1;
+            line-height: 1.15;
         }
 
         .hb-brand-title {
@@ -296,7 +298,7 @@
 
         .hb-brand-sub {
             font-size: 10px;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 0.18em;
             color: var(--hb-muted);
         }
@@ -310,13 +312,13 @@
         .hb-menu-links {
             display: flex;
             align-items: center;
-            gap: 28px;
+            gap: 26px;
             list-style: none;
         }
 
         .hb-menu-links a {
             font-size: 14.5px;
-            font-weight: 500;
+            font-weight: 600;
             color: var(--hb-slate);
             position: relative;
             padding: 6px 0;
@@ -347,6 +349,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            flex-shrink: 0;
         }
 
         .hb-mobile-burger {
@@ -369,8 +372,8 @@
             padding: 24px;
             display: none;
             flex-direction: column;
-            gap: 16px;
-            box-shadow: 0 16px 32px rgba(0,0,0,0.08);
+            gap: 14px;
+            box-shadow: 0 16px 32px rgba(0,0,0,0.12);
             z-index: 999;
         }
 
@@ -380,7 +383,7 @@
 
         .hb-mobile-drawer a {
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--hb-dark);
             padding: 8px 0;
             border-bottom: 1px solid var(--hb-border);
@@ -392,6 +395,25 @@
             }
             .hb-mobile-burger {
                 display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hb-nav-actions .hb-pill-btn[title="Staff & Admin Portal"],
+            .hb-nav-actions .hb-btn-primary {
+                display: none;
+            }
+            .hb-nav-inner {
+                padding: 0 16px;
+            }
+            .hb-logo-img {
+                height: 36px;
+            }
+            .hb-brand-title {
+                font-size: 13px;
+            }
+            .hb-brand-sub {
+                font-size: 8.5px;
             }
         }
 
@@ -416,14 +438,17 @@
         .hero-headline {
             font-size: clamp(38px, 4.6vw, 62px);
             margin-bottom: 22px;
+            font-weight: 700;
+            color: var(--hb-dark);
         }
 
         .hero-subtitle {
             font-size: clamp(16px, 1.3vw, 18px);
-            color: var(--hb-muted);
-            line-height: 1.65;
+            color: var(--hb-slate);
+            line-height: 1.68;
             margin-bottom: 32px;
             max-width: 540px;
+            font-weight: 500;
         }
 
         .hero-cta-group {
@@ -437,13 +462,13 @@
         /* Quick Search Bar */
         .hb-hero-search-card {
             background: var(--hb-white);
-            border: 1px solid var(--hb-border);
+            border: 1.5px solid var(--hb-border);
             border-radius: 50px;
             padding: 8px 12px 8px 24px;
             display: flex;
             align-items: center;
             gap: 14px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
             max-width: 520px;
         }
 
@@ -457,6 +482,7 @@
             font-size: 14.5px;
             background: transparent;
             color: var(--hb-dark);
+            font-weight: 500;
         }
 
         /* Media Column */
@@ -468,8 +494,8 @@
             position: relative;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 20px 48px rgba(13, 75, 87, 0.14);
-            border: 1px solid rgba(13, 75, 87, 0.1);
+            box-shadow: 0 20px 48px rgba(13, 75, 87, 0.16);
+            border: 1px solid rgba(13, 75, 87, 0.12);
             aspect-ratio: 4 / 3.2;
             background: var(--hb-teal-dark);
         }
@@ -487,24 +513,25 @@
             transform: scale(1.04);
         }
 
-        /* Floating Badges */
-        .hero-float-badge {
+        /* Rotating Collection Badge */
+        .hero-rotating-badge {
             position: absolute;
             bottom: 24px;
             left: 24px;
-            background: rgba(13, 75, 87, 0.88);
+            background: rgba(13, 75, 87, 0.92);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             color: var(--hb-white);
             padding: 12px 20px;
             border-radius: 8px;
             font-size: 13px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.25);
             z-index: 2;
+            transition: all 0.5s ease;
         }
 
-        html[dir="rtl"] .hero-float-badge {
+        html[dir="rtl"] .hero-rotating-badge {
             left: auto;
             right: 24px;
         }
@@ -517,9 +544,9 @@
             border: 1px solid var(--hb-border);
             padding: 12px 18px;
             border-radius: 8px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
             font-size: 13px;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--hb-teal);
             z-index: 2;
         }
@@ -553,12 +580,12 @@
 
         .hb-ticker-title {
             text-align: center;
-            font-size: 12px;
-            font-weight: 700;
+            font-size: 12.5px;
+            font-weight: 800;
             letter-spacing: 0.15em;
             color: var(--hb-muted);
             text-transform: uppercase;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         .hb-ticker-track {
@@ -573,11 +600,11 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 14.5px;
+            font-weight: 700;
             color: var(--hb-slate);
             white-space: nowrap;
-            opacity: 0.8;
+            opacity: 0.85;
             transition: opacity 0.2s;
         }
 
@@ -620,40 +647,44 @@
         }
 
         .hb-roadmap-card {
-            background: var(--hb-white);
-            border: 1px solid var(--hb-border);
+            background: #FFFFFF !important;
+            border: 1.5px solid #CBD5E1 !important;
             border-radius: var(--hb-radius);
             padding: 36px 30px;
             position: relative;
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+            opacity: 1 !important;
+            visibility: visible !important;
             transition: var(--hb-transition);
         }
 
         .hb-roadmap-card:hover {
             transform: translateY(-4px);
-            border-color: var(--hb-teal);
-            box-shadow: 0 12px 32px rgba(13, 75, 87, 0.08);
+            border-color: var(--hb-teal) !important;
+            box-shadow: 0 12px 32px rgba(13, 75, 87, 0.12);
         }
 
         .hb-roadmap-num {
             font-family: var(--hb-font-serif);
-            font-size: 38px;
-            color: var(--hb-clay);
+            font-size: 44px;
+            color: #0D4B57 !important;
             margin-bottom: 14px;
-            font-weight: 700;
+            font-weight: 800;
             line-height: 1;
         }
 
         .hb-roadmap-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--hb-dark);
+            font-size: 22px;
+            font-weight: 800;
+            color: #0F172A !important;
             margin-bottom: 12px;
         }
 
         .hb-roadmap-desc {
-            font-size: 14.5px;
-            color: var(--hb-muted);
-            line-height: 1.6;
+            font-size: 15.5px;
+            color: #334155 !important;
+            line-height: 1.65;
+            font-weight: 500;
         }
 
         @media (max-width: 860px) {
@@ -674,7 +705,7 @@
 
         .almiqat-service-card {
             background: var(--hb-white);
-            border: 1px solid var(--hb-border);
+            border: 1.5px solid var(--hb-border);
             border-radius: 8px;
             padding: 32px;
             transition: var(--hb-transition);
@@ -682,12 +713,13 @@
             flex-direction: column;
             justify-content: space-between;
             position: relative;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.03);
         }
 
         .almiqat-service-card:hover {
             border-color: var(--hb-teal);
             transform: translateY(-4px);
-            box-shadow: 0 14px 36px rgba(13, 75, 87, 0.1);
+            box-shadow: 0 14px 36px rgba(13, 75, 87, 0.12);
         }
 
         .almiqat-service-num {
@@ -713,18 +745,19 @@
         .almiqat-service-title {
             font-family: var(--hb-font-serif);
             font-size: 22px;
+            font-weight: 700;
             color: var(--hb-dark);
             margin-bottom: 12px;
         }
 
         html[dir="rtl"] .almiqat-service-title {
             font-family: var(--hb-font-ar);
-            font-weight: 700;
+            font-weight: 800;
         }
 
         .almiqat-service-desc {
-            font-size: 14.5px;
-            color: var(--hb-muted);
+            font-size: 15px;
+            color: var(--hb-slate);
             line-height: 1.65;
             margin-bottom: 24px;
             flex-grow: 1;
@@ -734,7 +767,7 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            font-size: 13.5px;
+            font-size: 14px;
             font-weight: 700;
             color: var(--hb-teal);
             cursor: pointer;
@@ -745,8 +778,42 @@
         }
 
         /* ==========================================================================
-           7. FEATURED PROPERTIES (Homebound Card Architecture .block-home-for-sale)
+           7. FEATURED PROPERTIES (Homebound Card Architecture + Design Toggle)
            ========================================================================== */
+        .hb-toggle-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+        }
+
+        .hb-toggle-container {
+            display: inline-flex;
+            background: #E2E8F0;
+            padding: 4px;
+            border-radius: 30px;
+            gap: 4px;
+        }
+
+        .hb-toggle-btn {
+            padding: 8px 20px;
+            border-radius: 26px;
+            font-size: 13.5px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            background: transparent;
+            color: var(--hb-slate);
+            transition: var(--hb-transition);
+        }
+
+        .hb-toggle-btn.active {
+            background: var(--hb-teal);
+            color: var(--hb-white);
+            box-shadow: 0 2px 8px rgba(13, 75, 87, 0.25);
+        }
+
         .hb-filter-tabs {
             display: flex;
             align-items: center;
@@ -759,7 +826,7 @@
             padding: 8px 18px;
             border-radius: 30px;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 700;
             background: var(--hb-white);
             border: 1px solid var(--hb-border);
             color: var(--hb-slate);
@@ -786,21 +853,21 @@
             }
         }
 
-        /* Card Container */
         .almiqat-property-card {
             background: var(--hb-white);
-            border: 1px solid var(--hb-border);
+            border: 1.5px solid var(--hb-border);
             border-radius: 8px;
             overflow: hidden;
             transition: var(--hb-transition);
             display: flex;
             flex-direction: column;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
         }
 
         .almiqat-property-card:hover {
             transform: translateY(-5px);
             border-color: var(--hb-teal-light);
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
         }
 
         .hb-card-media {
@@ -826,10 +893,10 @@
             position: absolute;
             top: 14px;
             left: 14px;
-            background: rgba(13, 75, 87, 0.9);
+            background: rgba(13, 75, 87, 0.92);
             color: var(--hb-white);
             font-size: 11px;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: 0.1em;
             text-transform: uppercase;
             padding: 5px 12px;
@@ -846,14 +913,14 @@
             position: absolute;
             bottom: 14px;
             left: 14px;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             color: var(--hb-dark);
             font-family: var(--hb-font-sans);
             font-weight: 800;
             font-size: 16px;
             padding: 6px 14px;
             border-radius: 4px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
         }
 
         html[dir="rtl"] .hb-card-price-tag {
@@ -879,6 +946,7 @@
 
         html[dir="rtl"] .hb-card-title {
             font-family: var(--hb-font-ar);
+            font-weight: 800;
         }
 
         .hb-card-location {
@@ -888,9 +956,9 @@
             font-size: 13px;
             color: var(--hb-muted);
             margin-bottom: 20px;
+            font-weight: 600;
         }
 
-        /* Homebound Stats Row with Hairlines */
         .hb-card-stats-row {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -925,11 +993,12 @@
             color: var(--hb-muted);
             margin-bottom: 2px;
             display: block;
+            font-weight: 700;
         }
 
         .hb-card-stat-val {
             font-size: 13px;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--hb-dark);
             display: block;
         }
@@ -942,63 +1011,197 @@
         }
 
         /* ==========================================================================
-           8. INVESTMENT HOTSPOTS & COMMUNITIES (Muwailah, Majaz, etc.)
+           8. LOCATION TABS & INTERACTIVE MAP SECTION
            ========================================================================== */
-        .hb-hotspots-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin-top: 40px;
-        }
-
-        .hb-hotspot-card {
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
-            height: 320px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-            cursor: pointer;
-        }
-
-        .hb-hotspot-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .hb-hotspot-card:hover img {
-            transform: scale(1.08);
-        }
-
-        .hb-hotspot-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 40%, rgba(13, 75, 87, 0.92) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
+        .hb-map-card {
+            background: #FFFFFF;
+            border: 1.5px solid var(--hb-border);
+            border-radius: 12px;
             padding: 24px;
-            color: var(--hb-white);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            margin-top: 36px;
         }
 
-        .hb-hotspot-name {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 4px;
+        .hb-map-hotspot {
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .hb-hotspot-sub {
-            font-size: 13px;
-            opacity: 0.85;
+        .hb-map-hotspot:hover circle.pin-dot {
+            fill: var(--hb-clay);
+            transform: scale(1.3);
+            transform-origin: center;
+        }
+
+        .hb-map-hotspot.active circle.pin-dot {
+            fill: #DC2626;
         }
 
         /* ==========================================================================
-           9. ROI CALCULATOR
+           9. FEATURE CAROUSEL (Auto-Sliding Image Slider with Drag, Arrows & Dots)
+           ========================================================================== */
+        .hb-carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-top: 40px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+            background: #000;
+        }
+
+        .hb-carousel-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: grab;
+        }
+
+        .hb-carousel-track:active {
+            cursor: grabbing;
+        }
+
+        .hb-carousel-slide {
+            min-width: 100%;
+            position: relative;
+            aspect-ratio: 16 / 8;
+            max-height: 520px;
+        }
+
+        @media (max-width: 768px) {
+            .hb-carousel-slide {
+                aspect-ratio: 16 / 10;
+            }
+        }
+
+        .hb-carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hb-carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(13, 75, 87, 0.95) 90%);
+            padding: 40px 32px 30px;
+            color: #fff;
+        }
+
+        .hb-carousel-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--hb-border);
+            color: var(--hb-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: var(--hb-transition);
+        }
+
+        .hb-carousel-nav-btn:hover {
+            background: var(--hb-teal);
+            color: #fff;
+        }
+
+        .hb-carousel-prev {
+            left: 20px;
+        }
+        .hb-carousel-next {
+            right: 20px;
+        }
+
+        .hb-carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .hb-carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #CBD5E1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .hb-carousel-dot.active {
+            background: var(--hb-teal);
+            width: 28px;
+            border-radius: 8px;
+        }
+
+        /* ==========================================================================
+           10. CLIENT TESTIMONIALS (Staggered Review Cards)
+           ========================================================================== */
+        .hb-testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+            margin-top: 40px;
+        }
+
+        .hb-testimonial-card {
+            background: var(--hb-white);
+            border: 1.5px solid var(--hb-border);
+            border-radius: 8px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+            transition: var(--hb-transition);
+        }
+
+        .hb-testimonial-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--hb-teal);
+            box-shadow: 0 12px 32px rgba(13, 75, 87, 0.1);
+        }
+
+        .hb-testimonial-stars {
+            color: var(--hb-clay);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .hb-testimonial-quote {
+            font-size: 15px;
+            color: var(--hb-slate);
+            line-height: 1.65;
+            font-style: italic;
+            margin-bottom: 24px;
+        }
+
+        .hb-testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .hb-testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--hb-teal);
+        }
+
+        /* ==========================================================================
+           11. ROI CALCULATOR
            ========================================================================== */
         .hb-calc-box {
             background: var(--hb-white);
-            border: 1px solid var(--hb-border);
+            border: 1.5px solid var(--hb-border);
             border-radius: 12px;
             padding: 40px;
             box-shadow: 0 10px 32px rgba(0,0,0,0.05);
@@ -1024,7 +1227,7 @@
             justify-content: space-between;
             margin-bottom: 8px;
             font-size: 14.5px;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .hb-slider-input {
@@ -1047,14 +1250,14 @@
         .hb-calc-yield {
             font-family: var(--hb-font-serif);
             font-size: 48px;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--hb-teal);
             line-height: 1;
             margin: 12px 0;
         }
 
         /* ==========================================================================
-           10. PARALLAX GALLERY & BOTTOM CTA
+           12. PARALLAX GALLERY & BOTTOM CTA
            ========================================================================== */
         .hb-gallery-grid {
             display: grid;
@@ -1103,13 +1306,13 @@
 
         .hb-bottom-cta p {
             font-size: 17px;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.85);
             max-width: 600px;
             margin: 0 auto 36px;
         }
 
         /* ==========================================================================
-           11. FOOTER (Homebound Minimalist Luxury)
+           13. LUXURY MINIMALIST FOOTER
            ========================================================================== */
         .hb-footer {
             background-color: var(--hb-linen);
@@ -1141,7 +1344,7 @@
             letter-spacing: 0.12em;
             color: var(--hb-clay);
             margin-bottom: 20px;
-            font-weight: 700;
+            font-weight: 800;
         }
 
         .hb-footer-links {
@@ -1154,6 +1357,7 @@
         .hb-footer-links a {
             font-size: 14.5px;
             color: var(--hb-slate);
+            font-weight: 500;
         }
 
         .hb-footer-links a:hover {
@@ -1173,12 +1377,12 @@
         }
 
         /* ==========================================================================
-           12. MODAL SYSTEM OVERLAYS
+           14. MODAL SYSTEM OVERLAYS & ADMIN PORTAL
            ========================================================================== */
         .almiqat-modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(15, 23, 42, 0.7);
+            background: rgba(15, 23, 42, 0.75);
             backdrop-filter: blur(6px);
             -webkit-backdrop-filter: blur(6px);
             z-index: 2000;
@@ -1199,16 +1403,10 @@
             position: relative;
             box-shadow: 0 24px 64px rgba(0,0,0,0.25);
             border: 1px solid var(--hb-border);
-            animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .almiqat-modal-dialog-large {
-            max-width: 1080px;
-        }
-
-        @keyframes modalFadeIn {
-            from { opacity: 0; transform: translateY(20px) scale(0.98); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
+            max-width: 1100px;
         }
 
         .almiqat-modal-close {
@@ -1240,7 +1438,7 @@
             transform: rotate(90deg);
         }
 
-        /* Admin UI Styling */
+        /* Admin UI */
         .admin-nav-tabs {
             display: flex;
             gap: 8px;
@@ -1338,7 +1536,7 @@
             color: #fff;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            font-weight: 600;
+            font-weight: 700;
             font-size: 14px;
             z-index: 9999;
             transform: translateY(100px);
@@ -1355,7 +1553,7 @@
 <body>
 
     <!-- ==========================================================================
-         1. HOMEBOUND NAVIGATION BAR (English Only Brand Logo per Request)
+         1. HOMEBOUND NAVIGATION BAR (English Only Brand Mark per Request)
          ========================================================================== -->
     <header class="hb-nav-header" id="almiqatHeader">
         <div class="hb-nav-inner">
@@ -1375,13 +1573,15 @@
                     <li><a href="#howItWorks" class="t-txt" data-en="How We Work" data-ar="كيف نعمل">How We Work</a></li>
                     <li><a href="#almiqatServicesSection" class="t-txt" data-en="Services" data-ar="خدماتنا">Services</a></li>
                     <li><a href="#almiqatPropertiesSection" class="t-txt" data-en="Properties" data-ar="العقارات">Properties</a></li>
-                    <li><a href="#hotspotsSection" class="t-txt" data-en="Hotspots" data-ar="المواقع">Hotspots</a></li>
+                    <li><a href="#hotspotsSection" class="t-txt" data-en="Location Map" data-ar="الخريطة والمواقع">Location Map</a></li>
+                    <li><a href="#featureCarouselSection" class="t-txt" data-en="Showcase" data-ar="المعرض">Showcase</a></li>
                     <li><a href="#calculatorSection" class="t-txt" data-en="Calculator" data-ar="الحاسبة">Calculator</a></li>
+                    <li><a href="#testimonialsSection" class="t-txt" data-en="Reviews" data-ar="آراء العملاء">Reviews</a></li>
                     <li><a href="#contact" class="t-txt" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
                 </ul>
             </nav>
 
-            <!-- Action Buttons: Staff + Language Toggle + Consultation CTA -->
+            <!-- Actions: Staff + Language Toggle + Consultation CTA -->
             <div class="hb-nav-actions">
                 <button type="button" class="hb-pill-btn" onclick="openAdminAccessModal();" title="Staff & Admin Portal">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -1409,12 +1609,19 @@
             <a href="#howItWorks" onclick="toggleMobileNav();" class="t-txt" data-en="How We Work" data-ar="كيف نعمل">How We Work</a>
             <a href="#almiqatServicesSection" onclick="toggleMobileNav();" class="t-txt" data-en="Services" data-ar="خدماتنا">Services</a>
             <a href="#almiqatPropertiesSection" onclick="toggleMobileNav();" class="t-txt" data-en="Featured Properties" data-ar="أحدث العقارات">Featured Properties</a>
-            <a href="#hotspotsSection" onclick="toggleMobileNav();" class="t-txt" data-en="Hotspots" data-ar="المواقع الاستثمارية">Hotspots</a>
+            <a href="#hotspotsSection" onclick="toggleMobileNav();" class="t-txt" data-en="Location Map" data-ar="الخريطة والمواقع">Location Map</a>
+            <a href="#featureCarouselSection" onclick="toggleMobileNav();" class="t-txt" data-en="Showcase Carousel" data-ar="المعرض الدوار">Showcase Carousel</a>
             <a href="#calculatorSection" onclick="toggleMobileNav();" class="t-txt" data-en="Investment Calculator" data-ar="حاسبة العائد">Investment Calculator</a>
+            <a href="#testimonialsSection" onclick="toggleMobileNav();" class="t-txt" data-en="Client Reviews" data-ar="آراء العملاء">Client Reviews</a>
             <a href="#contact" onclick="toggleMobileNav();" class="t-txt" data-en="Our Office" data-ar="مكتبنا">Our Office</a>
-            <button type="button" class="hb-btn hb-btn-primary" onclick="toggleMobileNav(); openEnquiryModal('General Inquiry');" style="margin-top: 8px;">
-                <span class="t-txt" data-en="Book Consultation" data-ar="طلب استشارة عقارية">Book Consultation</span>
-            </button>
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 14px;">
+                <button type="button" class="hb-btn hb-btn-primary" onclick="toggleMobileNav(); openEnquiryModal('General Inquiry');">
+                    <span class="t-txt" data-en="Book Consultation / Inquire" data-ar="طلب استشارة عقارية">Book Consultation / Inquire</span>
+                </button>
+                <button type="button" class="hb-btn hb-btn-secondary" onclick="toggleMobileNav(); openAdminAccessModal();">
+                    🔒 <span class="t-txt" data-en="Staff & Admin Portal" data-ar="بوابة الموظفين والإدارة">Staff & Admin Portal</span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -1452,7 +1659,7 @@
                     <!-- Quick Search Pill Card -->
                     <div class="hb-hero-search-card">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--hb-teal)" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                        <input type="text" class="hb-hero-search-input" id="heroQuickSearch" placeholder="Search by area (e.g. Muwailah, Al Majaz, 2BHK...)" onkeyup="handleQuickSearch(event);">
+                        <input type="text" class="hb-hero-search-input" id="heroQuickSearch" placeholder="Search by area (e.g. Muwailah, Al Majaz, Villa...)" onkeyup="handleQuickSearch(event);">
                         <button type="button" class="hb-btn hb-btn-primary hb-btn-sm" onclick="triggerHeroSearch();">
                             <span class="t-txt" data-en="Search" data-ar="بحث">Search</span>
                         </button>
@@ -1466,9 +1673,10 @@
                             <source src="hero-video.mp4" type="video/mp4">
                             <img src="almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1450.jpg" alt="Sharjah Luxury Properties">
                         </video>
-                        <div class="hero-float-badge">
-                            <strong style="display:block; letter-spacing:0.06em;">NEW MUWAILAH COMMERCIAL</strong>
-                            <span style="opacity:0.85; font-size:11px;">Direct Landlord Representation</span>
+                        <!-- Rotating Collection Badge with smooth cross-fade -->
+                        <div class="hero-rotating-badge" id="heroRotatingBadge">
+                            <strong style="display:block; letter-spacing:0.06em;" id="heroBadgeDistrict">NEW MUWAILAH COMMERCIAL</strong>
+                            <span style="opacity:0.85; font-size:11.5px;" id="heroBadgeSubtitle">Direct Landlord Representation</span>
                         </div>
                         <div class="hero-stat-badge">
                             <span>★ 98% OCCUPANCY RATE</span>
@@ -1493,7 +1701,7 @@
             <div class="hb-ticker-item">🏢 <span>Sharjah Chamber of Commerce (غرفة تجارة وصناعة الشارقة)</span></div>
             <div class="hb-ticker-item">🏦 <span>UAE Central Bank Compliant Mortgages (مصرف الإمارات المركزي)</span></div>
             <div class="hb-ticker-item">✨ <span>Arada Master Developments (أراد للتطوير العقاري)</span></div>
-            <!-- Duplicate for seamless infinite marquee -->
+            <!-- Seamless Loop -->
             <div class="hb-ticker-item">🏛️ <span>Sharjah Real Estate Registration Dept (دائرة التسجيل العقاري)</span></div>
             <div class="hb-ticker-item">⚡ <span>SEWA Certified Utility Integration (هيئة كهرباء ومياه الشارقة)</span></div>
             <div class="hb-ticker-item">🌴 <span>Shurooq Investment Authority (شروق للاستثمار والتطوير)</span></div>
@@ -1555,7 +1763,7 @@
                         Our Professional Services in Sharjah
                     </h2>
                 </div>
-                <div style="font-size: 14.5px; color: var(--hb-muted); max-width: 440px;" class="t-txt" data-en="Licensed brokerage and asset management engineered to maximize returns and safeguard investments." data-ar="وساطة وإدارة أصول معتمدة تهدف إلى تعظيم عوائد الاستثمار وحماية الأصول.">
+                <div style="font-size: 15px; color: var(--hb-muted); max-width: 440px;" class="t-txt" data-en="Licensed brokerage and asset management engineered to maximize returns and safeguard investments." data-ar="وساطة وإدارة أصول معتمدة تهدف إلى تعظيم عوائد الاستثمار وحماية الأصول.">
                     Licensed brokerage and asset management engineered to maximize returns and safeguard investments.
                 </div>
             </div>
@@ -1568,41 +1776,55 @@
     </section>
 
     <!-- ==========================================================================
-         6. FEATURED PROPERTIES COLLECTION (.homecollections / #our-homes)
+         6. FEATURED PROPERTIES COLLECTION (Homebound Card Architecture + Toggle)
          ========================================================================== -->
     <section class="hb-section hb-section-alt" id="almiqatPropertiesSection">
         <div class="hb-container">
-            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 32px; flex-wrap: wrap; gap: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px; flex-wrap: wrap; gap: 20px;">
                 <div>
                     <span class="section-eyebrow t-txt" data-en="CURATED COLLECTION" data-ar="عقارات مميزة">CURATED COLLECTION</span>
                     <h2 class="section-headline t-txt" data-en="Browse Featured Properties in Sharjah" data-ar="تصفح أحدث العقارات المتاحة في الشارقة">
                         Browse Featured Properties in Sharjah
                     </h2>
                 </div>
-                <div style="font-size: 14px; color: var(--hb-muted);" class="t-txt" data-en="Showing verified direct-landlord listings" data-ar="عقود مباشرة وموثقة مع الملاك">
-                    Showing verified direct-landlord listings
+                <!-- Animated Homebound Category Toggle -->
+                <div class="hb-toggle-wrapper">
+                    <div class="hb-toggle-container" id="propCategoryToggle">
+                        <button type="button" class="hb-toggle-btn active" data-category="all" onclick="switchPropCategory('all', this);">
+                            <span class="t-txt" data-en="All Listings" data-ar="الكل">All Listings</span>
+                        </button>
+                        <button type="button" class="hb-toggle-btn" data-category="sale" onclick="switchPropCategory('sale', this);">
+                            <span class="t-txt" data-en="For Sale" data-ar="للبيع">For Sale</span>
+                        </button>
+                        <button type="button" class="hb-toggle-btn" data-category="rent" onclick="switchPropCategory('rent', this);">
+                            <span class="t-txt" data-en="For Rent" data-ar="للإيجار">For Rent</span>
+                        </button>
+                        <button type="button" class="hb-toggle-btn" data-category="design" onclick="switchPropCategory('design', this);">
+                            <span class="t-txt" data-en="Home Designs" data-ar="مخططات وتصاميم">Home Designs</span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <!-- Category & Status Filter Pills -->
+            <!-- District Filter Pills -->
             <div class="hb-filter-tabs" id="almiqatFilterPills">
-                <button type="button" class="hb-filter-tab active" data-filter="all" onclick="filterProperties('all', this);">
-                    <span class="t-txt" data-en="All Listings" data-ar="جميع العقارات">All Listings</span>
+                <button type="button" class="hb-filter-tab active" data-district="all" onclick="filterByDistrict('all', this);">
+                    <span class="t-txt" data-en="All Districts" data-ar="جميع المناطق">All Districts</span>
                 </button>
-                <button type="button" class="hb-filter-tab" data-filter="rent" onclick="filterProperties('rent', this);">
-                    <span class="t-txt" data-en="For Rent" data-ar="للإيجار">For Rent</span>
-                </button>
-                <button type="button" class="hb-filter-tab" data-filter="sale" onclick="filterProperties('sale', this);">
-                    <span class="t-txt" data-en="For Sale" data-ar="للبيع">For Sale</span>
-                </button>
-                <button type="button" class="hb-filter-tab" data-location="muwailah" onclick="filterProperties('muwailah', this);">
+                <button type="button" class="hb-filter-tab" data-district="muwailah" onclick="filterByDistrict('muwailah', this);">
                     <span class="t-txt" data-en="New Muwailah" data-ar="مويلح الجديدة">New Muwailah</span>
                 </button>
-                <button type="button" class="hb-filter-tab" data-location="majaz" onclick="filterProperties('majaz', this);">
+                <button type="button" class="hb-filter-tab" data-district="majaz" onclick="filterByDistrict('majaz', this);">
                     <span class="t-txt" data-en="Al Majaz" data-ar="المجاز">Al Majaz</span>
                 </button>
-                <button type="button" class="hb-filter-tab" data-location="khan" onclick="filterProperties('khan', this);">
+                <button type="button" class="hb-filter-tab" data-district="khan" onclick="filterByDistrict('khan', this);">
                     <span class="t-txt" data-en="Al Khan" data-ar="الخان">Al Khan</span>
+                </button>
+                <button type="button" class="hb-filter-tab" data-district="taawun" onclick="filterByDistrict('taawun', this);">
+                    <span class="t-txt" data-en="Al Taawun" data-ar="التعاون">Al Taawun</span>
+                </button>
+                <button type="button" class="hb-filter-tab" data-district="rahmaniya" onclick="filterByDistrict('rahmaniya', this);">
+                    <span class="t-txt" data-en="Al Rahmaniya & Tai" data-ar="الرحمانية والطي">Al Rahmaniya & Tai</span>
                 </button>
             </div>
 
@@ -1614,49 +1836,123 @@
     </section>
 
     <!-- ==========================================================================
-         7. INVESTMENT HOTSPOTS & COMMUNITIES (.ppp-callout)
+         7. LOCATION TABS WITH INTERACTIVE MAP
          ========================================================================== -->
     <section class="hb-section" id="hotspotsSection">
         <div class="hb-container">
             <div style="text-align: center; max-width: 680px; margin: 0 auto 36px;">
-                <span class="section-eyebrow t-txt" data-en="SHARJAH PRIME LOCATIONS" data-ar="أبرز المواقع الاستثمارية">SHARJAH PRIME LOCATIONS</span>
+                <span class="section-eyebrow t-txt" data-en="SHARJAH PRIME LOCATIONS" data-ar="خريطة المواقع الاستثمارية">SHARJAH PRIME LOCATIONS</span>
                 <h2 class="section-headline t-txt" data-en="Explore High-Yield Neighborhoods" data-ar="استكشف المناطق ذات العوائد الاستثمارية الأعلى">
                     Explore High-Yield Neighborhoods
                 </h2>
+                <p style="color: var(--hb-muted); margin-top: 10px;" class="t-txt" data-en="Click on any district hotspot on the map below to instantly filter properties in that location." data-ar="انقر على أي موقع استثماري في الخريطة التفاعلية أدناه لتصفية العقارات في تلك المنطقة فوراً.">
+                    Click on any district hotspot on the map below to instantly filter properties in that location.
+                </p>
             </div>
 
-            <div class="hb-hotspots-grid">
-                <div class="hb-hotspot-card" onclick="quickFilterByLocation('muwailah');">
-                    <img src="almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1450.jpg" alt="New Muwailah Commercial">
-                    <div class="hb-hotspot-overlay">
-                        <div class="hb-hotspot-name t-txt" data-en="New Muwailah Commercial" data-ar="مويلح التجارية الجديدة">New Muwailah Commercial</div>
-                        <div class="hb-hotspot-sub t-txt" data-en="Adjacent to University City & GEMS • High Rental Demand" data-ar="بجوار المدينة الجامعية ومدرسة جيمس • إقبال إيجاري مرتفع">Adjacent to University City & GEMS • High Rental Demand</div>
-                    </div>
-                </div>
+            <!-- Interactive Map Graphic with Pulsing Hotspots -->
+            <div class="hb-map-card">
+                <svg viewBox="0 0 1000 480" width="100%" height="auto" style="border-radius: 8px; background: #F1F5F9; display: block;">
+                    <!-- Stylized Coastline & Sharjah Topology -->
+                    <path d="M 0 340 Q 150 280 300 240 T 600 180 T 1000 120 L 1000 0 L 0 0 Z" fill="#E2E8F0" opacity="0.6"/>
+                    <path d="M 0 480 L 0 340 Q 150 280 300 240 T 600 180 T 1000 120 L 1000 480 Z" fill="#F8FAFC"/>
+                    <path d="M 220 250 Q 280 230 350 260 T 420 280" fill="none" stroke="#38BDF8" stroke-width="14" stroke-linecap="round" opacity="0.75" />
+                    <!-- Water Label -->
+                    <text x="250" y="270" font-family="sans-serif" font-size="12" fill="#0284C7" font-weight="700">Khalid Lagoon (بحيرة خالد)</text>
 
-                <div class="hb-hotspot-card" onclick="quickFilterByLocation('majaz');">
-                    <img src="almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1435.jpg" alt="Al Majaz Waterfront">
-                    <div class="hb-hotspot-overlay">
-                        <div class="hb-hotspot-name t-txt" data-en="Al Majaz Waterfront" data-ar="واجهة المجاز المائية">Al Majaz Waterfront</div>
-                        <div class="hb-hotspot-sub t-txt" data-en="Prime Lagoon Views • Luxury High-Rise Living" data-ar="إطلالات ساحرة على بحيرة خالد • أبراج سكنية فاخرة">Prime Lagoon Views • Luxury High-Rise Living</div>
-                    </div>
-                </div>
+                    <!-- Arterial Highways -->
+                    <line x1="280" y1="200" x2="800" y2="400" stroke="#CBD5E1" stroke-width="6" stroke-dasharray="8 6"/>
+                    <text x="560" y="320" font-family="sans-serif" font-size="11" fill="#64748B" transform="rotate(22 560 320)">Sheikh Mohammed Bin Zayed Rd (E311)</text>
 
-                <div class="hb-hotspot-card" onclick="quickFilterByLocation('khan');">
-                    <img src="almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1472.jpg" alt="Al Khan Beachfront">
-                    <div class="hb-hotspot-overlay">
-                        <div class="hb-hotspot-name t-txt" data-en="Al Khan & Al Mamzar" data-ar="شاطئ الخان والممزر">Al Khan & Al Mamzar</div>
-                        <div class="hb-hotspot-sub t-txt" data-en="Beachfront Penthouses • Direct Dubai Commute" data-ar="بنتهاوس شاطئي • سهولة وسرعة التنقل إلى دبي">Beachfront Penthouses • Direct Dubai Commute</div>
-                    </div>
-                </div>
+                    <!-- Hotspot Pin 1: New Muwailah Commercial -->
+                    <g class="hb-map-hotspot" onclick="quickFilterByDistrict('muwailah');" transform="translate(680, 290)">
+                        <circle cx="0" cy="0" r="22" fill="#0D4B57" opacity="0.18">
+                            <animate attributeName="r" values="16;28;16" dur="2.5s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0.25;0.05;0.25" dur="2.5s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle class="pin-dot" cx="0" cy="0" r="9" fill="#0D4B57"/>
+                        <rect x="-80" y="-40" width="160" height="26" rx="4" fill="#0D4B57"/>
+                        <text x="0" y="-23" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#fff" font-weight="700">New Muwailah (مويلح)</text>
+                    </g>
+
+                    <!-- Hotspot Pin 2: Al Majaz Waterfront -->
+                    <g class="hb-map-hotspot" onclick="quickFilterByDistrict('majaz');" transform="translate(340, 220)">
+                        <circle cx="0" cy="0" r="22" fill="#0D4B57" opacity="0.18">
+                            <animate attributeName="r" values="16;28;16" dur="2.5s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle class="pin-dot" cx="0" cy="0" r="9" fill="#0D4B57"/>
+                        <rect x="-80" y="-40" width="160" height="26" rx="4" fill="#0D4B57"/>
+                        <text x="0" y="-23" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#fff" font-weight="700">Al Majaz (واجهة المجاز)</text>
+                    </g>
+
+                    <!-- Hotspot Pin 3: Al Khan Beachfront -->
+                    <g class="hb-map-hotspot" onclick="quickFilterByDistrict('khan');" transform="translate(180, 180)">
+                        <circle cx="0" cy="0" r="22" fill="#0D4B57" opacity="0.18">
+                            <animate attributeName="r" values="16;28;16" dur="2.5s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle class="pin-dot" cx="0" cy="0" r="9" fill="#0D4B57"/>
+                        <rect x="-80" y="-40" width="160" height="26" rx="4" fill="#0D4B57"/>
+                        <text x="0" y="-23" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#fff" font-weight="700">Al Khan Beach (الخان)</text>
+                    </g>
+
+                    <!-- Hotspot Pin 4: Al Taawun -->
+                    <g class="hb-map-hotspot" onclick="quickFilterByDistrict('taawun');" transform="translate(240, 310)">
+                        <circle cx="0" cy="0" r="18" fill="#B45309" opacity="0.2"/>
+                        <circle class="pin-dot" cx="0" cy="0" r="8" fill="#B45309"/>
+                        <rect x="-70" y="-38" width="140" height="24" rx="4" fill="#B45309"/>
+                        <text x="0" y="-22" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#fff" font-weight="700">Al Taawun (التعاون)</text>
+                    </g>
+
+                    <!-- Hotspot Pin 5: Al Rahmaniya & Al Tai -->
+                    <g class="hb-map-hotspot" onclick="quickFilterByDistrict('rahmaniya');" transform="translate(850, 200)">
+                        <circle cx="0" cy="0" r="18" fill="#0D4B57" opacity="0.2"/>
+                        <circle class="pin-dot" cx="0" cy="0" r="8" fill="#0D4B57"/>
+                        <rect x="-85" y="-38" width="170" height="24" rx="4" fill="#0D4B57"/>
+                        <text x="0" y="-22" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#fff" font-weight="700">Al Rahmaniya & Tai (الرحمانية)</text>
+                    </g>
+                </svg>
             </div>
         </div>
     </section>
 
     <!-- ==========================================================================
-         8. TECHNOLOGY & ROI CALCULATOR SECTION (.technologysection)
+         8. FEATURE CAROUSEL (Auto-Sliding Image Slider with Drag, Arrows & Dots)
          ========================================================================== -->
-    <section class="hb-section hb-section-alt" id="calculatorSection">
+    <section class="hb-section hb-section-alt" id="featureCarouselSection">
+        <div class="hb-container">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px; flex-wrap: wrap; gap: 20px;">
+                <div>
+                    <span class="section-eyebrow t-txt" data-en="CURATED VISUAL SHOWCASE" data-ar="معرض الصور البانورامية">CURATED VISUAL SHOWCASE</span>
+                    <h2 class="section-headline t-txt" data-en="Signature Architectural Environments" data-ar="بيئات معمارية استثنائية في الشارقة">
+                        Signature Architectural Environments
+                    </h2>
+                </div>
+                <div style="font-size: 14.5px; color: var(--hb-muted);" class="t-txt" data-en="Auto-rotating portfolio gallery • Swipe or use arrows" data-ar="معرض دوار تفاعلي • اسحب أو استخدم الأسهم">
+                    Auto-rotating portfolio gallery • Swipe or use arrows
+                </div>
+            </div>
+
+            <!-- Carousel Box -->
+            <div class="hb-carousel-wrapper" id="hbMainCarousel">
+                <button type="button" class="hb-carousel-nav-btn hb-carousel-prev" onclick="carouselPrev();" aria-label="Previous Slide">&larr;</button>
+                <button type="button" class="hb-carousel-nav-btn hb-carousel-next" onclick="carouselNext();" aria-label="Next Slide">&rarr;</button>
+
+                <div class="hb-carousel-track" id="hbCarouselTrack">
+                    <!-- Slides injected dynamically -->
+                </div>
+            </div>
+
+            <!-- Dots -->
+            <div class="hb-carousel-dots" id="hbCarouselDots">
+                <!-- Dots injected dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         9. TECHNOLOGY & ROI CALCULATOR SECTION (.technologysection)
+         ========================================================================== -->
+    <section class="hb-section" id="calculatorSection">
         <div class="hb-container">
             <div style="text-align: center; max-width: 680px; margin: 0 auto 36px;">
                 <span class="section-eyebrow t-txt" data-en="INVESTMENT INTELLIGENCE" data-ar="ذكاء الاستثمار العقاري">INVESTMENT INTELLIGENCE</span>
@@ -1714,10 +2010,26 @@
         </div>
     </section>
 
-    <!-- [TESTIMONIALS SECTION PERMANENTLY REMOVED AS REQUESTED BY USER] -->
+    <!-- ==========================================================================
+         10. CLIENT TESTIMONIALS (Staggered Review Cards)
+         ========================================================================== -->
+    <section class="hb-section hb-section-alt" id="testimonialsSection">
+        <div class="hb-container">
+            <div style="text-align: center; max-width: 680px; margin: 0 auto 36px;">
+                <span class="section-eyebrow t-txt" data-en="VERIFIED CLIENT VOICES" data-ar="شهادات العملاء والمستثمرين">VERIFIED CLIENT VOICES</span>
+                <h2 class="section-headline t-txt" data-en="Trusted by Landlords & Residents in Sharjah" data-ar="ثقة الملاك والمستثمرين في إمارة الشارقة">
+                    Trusted by Landlords & Residents in Sharjah
+                </h2>
+            </div>
+
+            <div class="hb-testimonials-grid" id="almiqatTestimonialsGrid">
+                <!-- Rendered dynamically from TESTIMONIALS array -->
+            </div>
+        </div>
+    </section>
 
     <!-- ==========================================================================
-         9. ARCHITECTURAL PORTFOLIO GALLERY (3 Parallax Images)
+         11. ARCHITECTURAL PORTFOLIO GALLERY (3 Parallax Images)
          ========================================================================== -->
     <section class="hb-section" id="gallerySection">
         <div class="hb-container">
@@ -1735,20 +2047,20 @@
 
             <div class="hb-gallery-grid">
                 <div class="hb-gallery-item">
-                    <img src="almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1435.jpg" alt="Al Majaz View" class="hb-parallax-img">
+                    <img src="almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1435.jpg" alt="Al Majaz View" class="hb-parallax-img" onerror="this.src='https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80';">
                 </div>
                 <div class="hb-gallery-item">
-                    <img src="almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1472.jpg" alt="Al Khan Penthouse" class="hb-parallax-img">
+                    <img src="almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1472.jpg" alt="Al Khan Penthouse" class="hb-parallax-img" onerror="this.src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80';">
                 </div>
                 <div class="hb-gallery-item">
-                    <img src="almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1419.jpg" alt="Sharjah Luxury Villa" class="hb-parallax-img">
+                    <img src="almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1419.jpg" alt="Sharjah Luxury Villa" class="hb-parallax-img" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80';">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ==========================================================================
-         10. CLOSING HIGH-IMPACT CTA BANNER
+         12. CLOSING HIGH-IMPACT CTA BANNER ("Let's Find Your Property in Sharjah")
          ========================================================================== -->
     <section class="hb-bottom-cta" id="contact">
         <div class="hb-container">
@@ -1773,7 +2085,7 @@
     </section>
 
     <!-- ==========================================================================
-         11. LUXURY MINIMALIST FOOTER (English-Only Brand Logo)
+         13. LUXURY MINIMALIST FOOTER (English-Only Brand Logo)
          ========================================================================== -->
     <footer class="hb-footer">
         <div class="hb-container">
@@ -1787,7 +2099,7 @@
                             <span class="hb-brand-sub">REAL ESTATE</span>
                         </div>
                     </a>
-                    <p style="font-size: 14px; color: var(--hb-muted); line-height: 1.6;" class="t-txt" data-en="Premier real estate brokerage and asset management headquartered in Sharjah, UAE. Government registered and dedicated to transparent landlord and tenant partnerships." data-ar="وساطة وإدارة أصول عقارية رائدة مقرها الشارقة، الإمارات. مسجلة ومرخصة رسمياً وملتزمة بأعلى معايير الشفافية للملاك والمستأجرين.">
+                    <p style="font-size: 14.5px; color: var(--hb-slate); line-height: 1.65;" class="t-txt" data-en="Premier real estate brokerage and asset management headquartered in Sharjah, UAE. Government registered and dedicated to transparent landlord and tenant partnerships." data-ar="وساطة وإدارة أصول عقارية رائدة مقرها الشارقة، الإمارات. مسجلة ومرخصة رسمياً وملتزمة بأعلى معايير الشفافية للملاك والمستأجرين.">
                         Premier real estate brokerage and asset management headquartered in Sharjah, UAE. Government registered and dedicated to transparent landlord and tenant partnerships.
                     </p>
                 </div>
@@ -1819,13 +2131,13 @@
                 <!-- Col 4: Contact Information -->
                 <div class="hb-footer-col">
                     <h4 class="t-txt" data-en="Sharjah Office" data-ar="مكتب الشارقة">Sharjah Office</h4>
-                    <p style="font-size: 14px; color: var(--hb-muted); margin-bottom: 12px;" class="t-txt" data-en="Al Qasimia / New Muwailah Commercial, Sharjah, United Arab Emirates" data-ar="منطقة القاسمية / مويلح التجارية الجديدة، الشارقة، الإمارات العربية المتحدة" id="footerAddressDisplay">
+                    <p style="font-size: 14px; color: var(--hb-slate); margin-bottom: 12px;" class="t-txt" data-en="Al Qasimia / New Muwailah Commercial, Sharjah, United Arab Emirates" data-ar="منطقة القاسمية / مويلح التجارية الجديدة، الشارقة، الإمارات العربية المتحدة" id="footerAddressDisplay">
                         Al Qasimia / New Muwailah Commercial, Sharjah, United Arab Emirates
                     </p>
-                    <p style="font-size: 14px; color: var(--hb-dark); font-weight: 600; margin-bottom: 6px;">
+                    <p style="font-size: 14.5px; color: var(--hb-dark); font-weight: 700; margin-bottom: 6px;">
                         📞 <span id="footerPhoneDisplay">+971 6 555 1234</span>
                     </p>
-                    <p style="font-size: 14px; color: var(--hb-dark); font-weight: 600; margin-bottom: 16px;">
+                    <p style="font-size: 14.5px; color: var(--hb-dark); font-weight: 700; margin-bottom: 16px;">
                         ✉️ <span id="footerEmailDisplay">info@almiqat.ae</span>
                     </p>
                     <button type="button" class="hb-pill-btn" onclick="openAdminAccessModal();">
@@ -1848,10 +2160,10 @@
     </footer>
 
     <!-- ==========================================================================
-         12. OPERATIONAL MODALS (Properly Wrapped with Functional IDs)
+         14. MODALS & ADMIN SUITE (Secure Login almiqatserver@gmail.com / almiqat@123)
          ========================================================================== -->
 
-    <!-- MODAL 1: Staff & Admin Security Portal (/admin) -->
+    <!-- MODAL 1: Admin & Staff Portal (/admin or #admin) -->
     <div id="almiqatAdminAccessModal" class="almiqat-modal-overlay">
         <div class="almiqat-modal-dialog almiqat-modal-dialog-large">
             <button type="button" class="almiqat-modal-close" onclick="closeAdminAccessModal();">&times;</button>
@@ -1871,23 +2183,23 @@
                 <form onsubmit="handleAdminLogin(event);" style="max-width: 440px; margin: 0 auto;">
                     <div class="admin-field-group">
                         <label class="t-txt" data-en="Staff Email / Username *" data-ar="البريد الإلكتروني المعتمد للموظف *">Staff Email / Username *</label>
-                        <input type="text" id="adminInputUser" class="admin-input" required placeholder="admin@almiqat.ae (or almiqatserver@gmail.com)">
+                        <input type="text" id="adminInputUser" class="admin-input" required placeholder="almiqatserver@gmail.com">
                     </div>
 
                     <div class="admin-field-group">
                         <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
                             <label class="t-txt" data-en="Staff Password *" data-ar="كلمة المرور *">Staff Password *</label>
-                            <a href="javascript:void(0)" onclick="switchAdminView('otp');" style="font-size: 12.5px; color: var(--hb-clay); font-weight: 600;" class="t-txt" data-en="Forgot Password?" data-ar="نسيت كلمة المرور؟">Forgot Password?</a>
+                            <a href="javascript:void(0)" onclick="switchAdminView('otp');" style="font-size: 12.5px; color: var(--hb-clay); font-weight: 700;" class="t-txt" data-en="Forgot Password?" data-ar="نسيت كلمة المرور؟">Forgot Password?</a>
                         </div>
-                        <input type="password" id="adminInputPass" class="admin-input" required placeholder="Enter password (e.g. AlMiqat2026!)">
+                        <input type="password" id="adminInputPass" class="admin-input" required placeholder="Enter password (e.g. almiqat@123)">
                     </div>
 
                     <button type="submit" class="hb-btn hb-btn-primary" style="width: 100%; margin-top: 10px;">
                         <span>🔒 <span class="t-txt" data-en="Secure Log In" data-ar="تسجيل الدخول الآمن">Secure Log In</span></span>
                     </button>
 
-                    <div style="text-align: center; margin-top: 18px; font-size: 12px; color: var(--hb-muted);">
-                        Demo Access: <code>admin@almiqat.ae</code> &bull; Password: <code>AlMiqat2026!</code>
+                    <div style="text-align: center; margin-top: 18px; font-size: 13px; color: var(--hb-muted);">
+                        Authorized Admin: <code>almiqatserver@gmail.com</code> &bull; Password: <code>almiqat@123</code>
                     </div>
                 </form>
             </div>
@@ -1899,7 +2211,7 @@
                     <p style="font-size: 13.5px; color: var(--hb-muted); margin-top: 6px;">A verification OTP will be sent to the verified company mailbox.</p>
                 </div>
                 <div id="otpDispatchedAlert" style="display:none; background:#FEF3C7; border:1px solid #FCD34D; padding:12px; border-radius:6px; font-size:13px; color:#92400E; margin-bottom:16px;">
-                    Notification: Code <strong id="simulatedOtpDisplay" style="font-size:16px; letter-spacing:2px;">-</strong> dispatched to <code>admin@almiqat.ae</code>
+                    Notification: Code <strong id="simulatedOtpDisplay" style="font-size:16px; letter-spacing:2px;">-</strong> dispatched to <code>almiqatserver@gmail.com</code>
                 </div>
                 <button type="button" class="hb-btn hb-btn-primary" onclick="sendSimulatedOtp();" style="width:100%;">
                     <span>Generate & Send OTP</span>
@@ -1915,13 +2227,13 @@
                 <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 28px; background: var(--hb-teal); color: #fff;">
                     <div>
                         <h3 style="font-size: 18px; font-weight: 700; margin: 0;">Al Miqat Admin & CMS Suite</h3>
-                        <span style="font-size: 12px; opacity: 0.85;">Logged in as: <strong id="adminSessionUser">admin@almiqat.ae</strong></span>
+                        <span style="font-size: 12px; opacity: 0.85;">Logged in as: <strong id="adminSessionUser">almiqatserver@gmail.com</strong></span>
                     </div>
                     <div style="display: flex; gap: 10px; align-items: center;">
-                        <button type="button" class="hb-btn hb-btn-sm" style="background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3);" onclick="saveAndPublishSite();">
+                        <button type="button" class="hb-btn hb-btn-sm" style="background: rgba(255,255,255,0.18); color: #fff; border: 1px solid rgba(255,255,255,0.35);" onclick="saveAndPublishSite();">
                             💾 Save & Publish Live
                         </button>
-                        <button type="button" class="hb-btn hb-btn-sm" style="background: rgba(239, 68, 68, 0.2); color: #FCA5A5; border: 1px solid rgba(239, 68, 68, 0.4);" onclick="adminLogout();">
+                        <button type="button" class="hb-btn hb-btn-sm" style="background: rgba(239, 68, 68, 0.25); color: #FCA5A5; border: 1px solid rgba(239, 68, 68, 0.5);" onclick="adminLogout();">
                             🚪 Logout
                         </button>
                     </div>
@@ -1932,7 +2244,9 @@
                     <button type="button" class="admin-tab-btn active" onclick="switchAdminTab('content', this);">📝 Site Content & Text</button>
                     <button type="button" class="admin-tab-btn" onclick="switchAdminTab('properties', this);">🏢 Manage Properties (<span id="adminPropCountBadge">6</span>)</button>
                     <button type="button" class="admin-tab-btn" onclick="switchAdminTab('services', this);">🛠️ Manage Services</button>
+                    <button type="button" class="admin-tab-btn" onclick="switchAdminTab('testimonials', this);">⭐ Testimonials (<span id="adminTestCountBadge">3</span>)</button>
                     <button type="button" class="admin-tab-btn" onclick="switchAdminTab('inquiries', this);">📥 Inquiries Inbox (<span id="adminInqCountBadge">3</span>)</button>
+                    <button type="button" class="admin-tab-btn" onclick="switchAdminTab('firebase', this);">🔥 Firebase & Deployment</button>
                     <button type="button" class="admin-tab-btn" onclick="switchAdminTab('backup', this);">⚙️ System & Backup</button>
                 </div>
 
@@ -1996,7 +2310,7 @@
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                         <h4 style="font-size: 16px; color: var(--hb-teal); margin: 0;">Properties Inventory (<span id="propTableCount">6</span>)</h4>
                         <button type="button" class="hb-btn hb-btn-primary hb-btn-sm" onclick="toggleAddNewPropDrawer();">
-                            + Add New Property
+                            + Add New Property Listing
                         </button>
                     </div>
 
@@ -2017,13 +2331,14 @@
                         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px;">
                             <div class="admin-field-group">
                                 <label>Price (AED) *</label>
-                                <input type="text" id="newPropPrice" class="admin-input" placeholder="AED 38,000">
+                                <input type="text" id="newPropPrice" class="admin-input" placeholder="AED 42,000">
                             </div>
                             <div class="admin-field-group">
-                                <label>Purpose</label>
+                                <label>Purpose / Status</label>
                                 <select id="newPropPurpose" class="admin-select">
                                     <option value="rent">For Rent (للإيجار)</option>
                                     <option value="sale">For Sale (للبيع)</option>
+                                    <option value="design">Home Design (مخطط وتصميم)</option>
                                 </select>
                             </div>
                             <div class="admin-field-group">
@@ -2039,7 +2354,7 @@
                         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
                             <div class="admin-field-group">
                                 <label>Area Size (Sq Ft)</label>
-                                <input type="text" id="newPropSize" class="admin-input" placeholder="1,150 sq.ft">
+                                <input type="text" id="newPropSize" class="admin-input" placeholder="1,250 sq.ft">
                             </div>
                             <div class="admin-field-group">
                                 <label>Parking</label>
@@ -2052,8 +2367,8 @@
                         </div>
 
                         <div class="admin-field-group">
-                            <label>Image URL (or select sample)</label>
-                            <input type="text" id="newPropImage" class="admin-input" value="almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1450.jpg">
+                            <label>Image URL (or Unsplash URL)</label>
+                            <input type="text" id="newPropImage" class="admin-input" value="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80">
                         </div>
 
                         <div style="display: flex; gap: 12px; margin-top: 14px;">
@@ -2084,20 +2399,33 @@
 
                 <!-- TAB 3: MANAGE SERVICES -->
                 <div class="admin-tab-panel" id="tabServices">
-                    <h4 style="font-size: 16px; color: var(--hb-teal); margin-bottom: 16px;">Core Al Miqat Real Estate Services</h4>
+                    <h4 style="font-size: 16px; color: var(--hb-teal); margin-bottom: 16px;">Core Al Miqat Real Estate Services (6 Services)</h4>
                     <p style="font-size: 13.5px; color: var(--hb-muted); margin-bottom: 20px;">
-                        Manage the 6 official services offered by Al Miqat Real Estate. Changes are reflected instantly on the live site.
+                        Manage the 6 official services offered by Al Miqat Real Estate. Changes update the public site live.
                     </p>
                     <div id="adminServicesList">
                         <!-- Populated dynamically -->
                     </div>
                 </div>
 
-                <!-- TAB 4: INQUIRIES INBOX + EXPORT TO CSV -->
+                <!-- TAB 4: TESTIMONIALS -->
+                <div class="admin-tab-panel" id="tabTestimonials">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <h4 style="font-size: 16px; color: var(--hb-teal); margin: 0;">Client Testimonials & Stories</h4>
+                        <button type="button" class="hb-btn hb-btn-secondary hb-btn-sm" onclick="toggleTestimonialsVisibility();" id="btnToggleTestimonials">
+                            👁️ Toggle Testimonials Section
+                        </button>
+                    </div>
+                    <div id="adminTestimonialsList">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- TAB 5: INQUIRIES INBOX + EXPORT TO CSV -->
                 <div class="admin-tab-panel" id="tabInquiries">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
                         <div>
-                            <h4 style="font-size: 16px; color: var(--hb-teal); margin: 0;">Client Inquiries & Consultation Leads</h4>
+                            <h4 style="font-size: 16px; color: var(--hb-teal); margin: 0;">Client Inquiries & Viewing Leads</h4>
                             <span style="font-size: 12.5px; color: var(--hb-muted);">Submissions from contact forms, property cards, and appointment requests</span>
                         </div>
                         <button type="button" class="hb-btn hb-btn-primary hb-btn-sm" onclick="exportInquiriesToCsv();" style="background: #10B981;">
@@ -2124,7 +2452,34 @@
                     </div>
                 </div>
 
-                <!-- TAB 5: SYSTEM & BACKUP -->
+                <!-- TAB 6: FIREBASE & DEPLOYMENT SETUP GUIDE -->
+                <div class="admin-tab-panel" id="tabFirebase">
+                    <h4 style="font-size: 16px; color: var(--hb-teal); margin-bottom: 14px;">🔥 Firebase & GitHub Pages Configuration</h4>
+                    <div style="background: #F8FAFC; border: 1px solid var(--hb-border); border-radius: 8px; padding: 20px; font-size: 14px; line-height: 1.7; color: var(--hb-slate);">
+                        <p><strong>1. Instant Local Persistence (Active Now):</strong><br>
+                        All your changes (texts, prices, new properties, inquiries) are automatically saved to your browser's persistent store and reflected instantly in the live DOM with zero redeployment needed.</p>
+
+                        <p style="margin-top: 12px;"><strong>2. Linking with Google Firebase Authentication & Firestore:</strong><br>
+                        To sync updates across different computers and staff accounts simultaneously:
+                        <ul style="margin: 8px 0 8px 24px;">
+                            <li>Create a free Firebase project at <a href="https://console.firebase.google.com" target="_blank" style="color: var(--hb-teal); text-decoration: underline;">console.firebase.google.com</a>.</li>
+                            <li>Enable <strong>Email/Password Authentication</strong> under Authentication &rarr; Sign-in method.</li>
+                            <li>Enable <strong>Cloud Firestore</strong> in production/test mode.</li>
+                            <li>Add your Firebase configuration credentials to <code>main.js</code> or <code>index.html</code>.</li>
+                        </ul>
+                        </p>
+
+                        <p style="margin-top: 12px;"><strong>3. GitHub Pages Deployment:</strong><br>
+                        Upload your updated <code>index.html</code> to your repository at:
+                        <br>
+                        <a href="https://github.com/ahmedmubashiralimubashir-ops/almiqat-realestate/upload/main" target="_blank" style="color: var(--hb-teal); font-weight: 700; text-decoration: underline;">
+                            https://github.com/ahmedmubashiralimubashir-ops/almiqat-realestate/upload/main
+                        </a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- TAB 7: SYSTEM & BACKUP -->
                 <div class="admin-tab-panel" id="tabBackup">
                     <h4 style="font-size: 16px; color: var(--hb-teal); margin-bottom: 16px;">Database Backup, Restore & Reset</h4>
                     <p style="font-size: 14px; color: var(--hb-muted); margin-bottom: 24px;">
@@ -2199,7 +2554,7 @@
             <button type="button" class="almiqat-modal-close" onclick="closeMaintenanceModal();">&times;</button>
             <div style="padding: 36px 30px;">
                 <div style="text-align: center; margin-bottom: 24px;">
-                    <div style="width: 52px; height: 52px; margin: 0 auto 12px; background: rgba(197, 111, 78, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--hb-clay); font-size: 22px;">
+                    <div style="width: 52px; height: 52px; margin: 0 auto 12px; background: rgba(180, 83, 9, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--hb-clay); font-size: 22px;">
                         🔧
                     </div>
                     <h3 class="headline-display" style="font-size: 24px;" class="t-txt" data-en="Technical Maintenance Request" data-ar="طلب صيانة فنية للعقار">Technical Maintenance Request</h3>
@@ -2292,15 +2647,21 @@
     <div id="adminToast">Action Completed</div>
 
     <!-- ==========================================================================
-         13. JAVASCRIPT LOGIC (Unified, GSAP + Lenis, Database & Admin Suite)
+         15. JAVASCRIPT LOGIC (Unified, GSAP + Lenis, Database, Carousel & Admin)
          ========================================================================== -->
     <script>
-        // --- 1. SEED DATA & REACTIVE LOCALSTORAGE DATABASE ---
-        const DEFAULT_PROPERTIES = [{"id": "prop_am1450", "titleEn": "Executive 2BHK Residence in New Muwailah Commercial | Opposite Gems School", "titleAr": "شقة تنفيذية فاخرة غرفتين وصالة في مويلح التجارية | مقابل مدرسة جيمس ميلينيوم", "locationEn": "New Muwailah Commercial, Sharjah", "locationAr": "مويلح التجارية الجديدة، الشارقة", "priceEn": "AED 46,000", "priceAr": "46,000 درهم", "pricePeriodEn": "Year", "pricePeriodAr": "سنوياً", "purpose": "rent", "status": "active", "bedrooms": "2 Beds", "bedroomsAr": "2 غرف", "bathrooms": "2 Baths", "bathroomsAr": "2 حمام", "sizeSqft": "1,320 sq.ft", "sizeSqftAr": "1,320 قدم²", "parking": "1 Covered", "parkingAr": "موقف مغطى", "featured": true, "image": "almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1450.jpg", "fallbackImage": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80", "descEn": "Executive 2-bedroom luxury residence in the vibrant core of New Muwailah Commercial, directly opposite GEMS Millennium School and minutes from University City. Features spacious open layout, master suite with fitted wardrobes, European kitchen styling, sunlit balcony, and 24/7 security.", "descAr": "شقة سكنية وتنفيذية فاخرة غرفتين وصالة في قلب مويلح التجارية بالشارقة مباشرة مقابل مدرسة جيمس ميلينيوم وبالقرب من المدينة الجامعية. تصميم واسع، غرفة نوم رئيسية ماستر مع خزائن حائط، مطبخ أوروبي راقٍ، بلكونة بإطلالة مفتوحة، موقف سيارات مغطى وأمن على مدار الساعة."}, {"id": "prop_am102", "titleEn": "Waterfront 3BHK Residence with Khalid Lagoon View", "titleAr": "شقة 3 غرف وصالة فاخرة بإطلالة مباشرة على بحيرة خالد", "locationEn": "Al Majaz Waterfront, Sharjah", "locationAr": "واجهة المجاز المائية، الشارقة", "priceEn": "AED 75,000", "priceAr": "75,000 درهم", "pricePeriodEn": "Year", "pricePeriodAr": "سنوياً", "purpose": "rent", "status": "active", "bedrooms": "3 Beds", "bedroomsAr": "3 غرف", "bathrooms": "3 Baths", "bathroomsAr": "3 حمام", "sizeSqft": "1,850 sq.ft", "sizeSqftAr": "1,850 قدم²", "parking": "2 Dedicated", "parkingAr": "موقفين مخصصين", "featured": true, "image": "almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1435.jpg", "fallbackImage": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80", "descEn": "Exceptional 3-bedroom waterfront apartment in a prime high-rise overlooking the lively Al Majaz Waterfront and Khalid Lagoon. High-ceiling panoramic glass windows, en-suite maid's room, state-of-the-art gymnasium, and infinity family pool.", "descAr": "شقة سكنية استثنائية 3 غرف وصالة في برج راقٍ يطل على واجهة المجاز وبحيرة خالد المائية. واجهات زجاجية واسعة، غرفة خادمة، مسبح عائلي وصالة لياقة بدنية مجهزة بالكامل."}, {"id": "prop_am103", "titleEn": "Ultra-Luxury 4-Bedroom Penthouse in Al Khan", "titleAr": "بنتهاوس فاخر 4 غرف نوم بإطلالة بحرية بالخان", "locationEn": "Al Khan Beachfront, Sharjah", "locationAr": "شاطئ الخان، الشارقة", "priceEn": "AED 1,850,000", "priceAr": "1,850,000 درهم", "pricePeriodEn": "One-time", "pricePeriodAr": "شراء للتملك", "purpose": "sale", "status": "active", "bedrooms": "4 Beds", "bedroomsAr": "4 غرف", "bathrooms": "5 Baths", "bathroomsAr": "5 حمامات", "sizeSqft": "3,400 sq.ft", "sizeSqftAr": "3,400 قدم²", "parking": "3 Covered", "parkingAr": "3 مواقف مغطاة", "featured": true, "image": "almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1472.jpg", "fallbackImage": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80", "descEn": "Palatial beachfront penthouse in Al Khan offering an expansive private sky terrace overlooking the Arabian Gulf. Built with premium Italian marble flooring, smart home automation, private elevator access, and 3 allocated parking bays. Freehold title available for all nationalities.", "descAr": "بنتهاوس شاطئي راقٍ في منطقة الخان يتميز بتراس خاص وإطلالة على الخليج العربي. رخام إيطالي فاخر، نظام منزل ذكي، مصاعد سريعة و3 مواقف سيارات مخصصة. متاح للتملك الحر."}, {"id": "prop_am104", "titleEn": "Premium Fitted Commercial Office in Al Nahda", "titleAr": "مكتب تجاري مجهز بالكامل في النهدة على حدود دبي", "locationEn": "Al Nahda, Sharjah / Dubai Border", "locationAr": "النهدة، حدود الشارقة ودبي", "priceEn": "AED 55,000", "priceAr": "55,000 درهم", "pricePeriodEn": "Year", "pricePeriodAr": "سنوياً", "purpose": "rent", "status": "active", "bedrooms": "Commercial", "bedroomsAr": "مكتب تجاري", "bathrooms": "2 Baths", "bathroomsAr": "2 حمام", "sizeSqft": "1,200 sq.ft", "sizeSqftAr": "1,200 قدم²", "parking": "2 Dedicated", "parkingAr": "موقفين مخصصين", "featured": false, "image": "almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1432.jpg", "fallbackImage": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80", "descEn": "Fully fitted Grade-A commercial office space located strategically at the border of Sharjah and Dubai in Al Nahda. Includes executive cabins, partitioned conference room, welcoming reception hall, private pantry, and high-speed fiber connectivity.", "descAr": "مكتب تجاري مجهز بالكامل ومرخص من الفئة الأولى بموقع استراتيجي على حدود دبي والشارقة في النهدة. غرف إدارة، قاعة اجتماعات، صالة استقبال، بوفيه ودورات مياه خاصة."}, {"id": "prop_am105", "titleEn": "Contemporary 4BHK Family Villa in Al Taawun", "titleAr": "فيلا عائلية عصرية 4 غرف مع حديقة خاصة في التعاون", "locationEn": "Al Taawun, Sharjah", "locationAr": "التعاون، الشارقة", "priceEn": "AED 2,400,000", "priceAr": "2,400,000 درهم", "pricePeriodEn": "One-time", "pricePeriodAr": "شراء للتملك", "purpose": "sale", "status": "active", "bedrooms": "4 Beds", "bedroomsAr": "4 غرف", "bathrooms": "4 Baths", "bathroomsAr": "4 حمامات", "sizeSqft": "3,800 sq.ft", "sizeSqftAr": "3,800 قدم²", "parking": "2 Covered", "parkingAr": "موقفين مغطيين", "featured": true, "image": "almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1419.jpg", "fallbackImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80", "descEn": "Architecturally striking modern 4-bedroom detached villa with private landscaped garden, covered double garage, driver room, and separate maid quarters. Minutes away from Sahara Centre, Al Taawun Mall, and primary transport links.", "descAr": "فيلا سكنية فاخرة بتصميم معماري حديث 4 غرف نوم مع حديقة خاصة منسقة وموقف سيارتين مغطى، وغرفة خادمة وسائق. قريبة من مركز صحارى ومول التعاون."}, {"id": "prop_am106", "titleEn": "High-Footfall Retail Showroom in Muwailah Commercial", "titleAr": "محل ومعرض تجاري في موقع استراتيجي بمويلح التجارية", "locationEn": "Muwailah Commercial Main Blvd, Sharjah", "locationAr": "شارع مويلح التجارية الرئيسي، الشارقة", "priceEn": "AED 85,000", "priceAr": "85,000 درهم", "pricePeriodEn": "Year", "pricePeriodAr": "سنوياً", "purpose": "rent", "status": "active", "bedrooms": "Retail", "bedroomsAr": "محل ومعرض", "bathrooms": "1 Bath", "bathroomsAr": "1 حمام", "sizeSqft": "1,650 sq.ft", "sizeSqftAr": "1,650 قدم²", "parking": "Open Front", "parkingAr": "مواقف أمامية", "featured": false, "image": "almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1476.jpg", "fallbackImage": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80", "descEn": "High-visibility retail showroom featuring expansive double-height glass frontage along the busiest arterial avenue of Muwailah Commercial. Approved for financial institutions, specialty clinics, upscale cafes, or corporate showrooms.", "descAr": "مساحة تجارية استراتيجية وواجهة زجاجية عريضة تطل على الشارع الرئيسي في مويلح التجارية بالشارقة. مناسبة للبنوك، العيادات، المقاهي والشركات الكبرى."}];
+        // --- 1. DATASETS & REACTIVE LOCALSTORAGE DATABASE ---
+        const DEFAULT_PROPERTIES = [{"id": "prop_am1450", "titleEn": "Executive 2BHK Residence in New Muwailah Commercial | Opposite Gems School", "titleAr": "شقة تنفيذية فاخرة غرفتين وصالة في مويلح التجارية | مقابل مدرسة جيمس ميلينيوم", "locationEn": "New Muwailah Commercial, Sharjah", "locationAr": "مويلح التجارية الجديدة، الشارقة", "district": "muwailah", "priceEn": "AED 46,000", "priceAr": "46,000 درهم", "pricePeriodEn": "Year", "pricePeriodAr": "سنوياً", "purpose": "rent", "category": "rent", "status": "active", "bedrooms": "2 Beds", "bedroomsAr": "2 غرف", "bathrooms": "2 Baths", "bathroomsAr": "2 حمام", "sizeSqft": "1,320 sq.ft", "sizeSqftAr": "1,320 قدم²", "parking": "1 Covered", "parkingAr": "موقف مغطى", "featured": true, "image": "almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1450.jpg", "fallbackImage": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80", "descEn": "Executive 2-bedroom luxury residence in the vibrant core of New Muwailah Commercial, directly opposite GEMS Millennium School and minutes from University City. Features spacious open layout, master suite with fitted wardrobes, European kitchen styling, sunlit balcony, and 24/7 security.", "descAr": "شقة سكنية وتنفيذية فاخرة غرفتين وصالة في قلب مويلح التجارية بالشارقة مباشرة مقابل مدرسة جيمس ميلينيوم وبالقرب من المدينة الجامعية. تصميم واسع، غرفة نوم رئيسية ماستر مع خزائن حائط، مطبخ أوروبي راقٍ، بلكونة بإطلالة مفتوحة، موقف سيارات مغطى وأمن على مدار الساعة."}, {"id": "prop_am102", "titleEn": "Waterfront 3BHK Residence with Khalid Lagoon View", "titleAr": "شقة 3 غرف وصالة فاخرة بإطلالة مباشرة على بحيرة خالد", "locationEn": "Al Majaz Waterfront, Sharjah", "locationAr": "واجهة المجاز المائية، الشارقة", "district": "majaz", "priceEn": "AED 75,000", "priceAr": "75,000 درهم", "pricePeriodEn": "Year", "pricePeriodAr": "سنوياً", "purpose": "rent", "category": "rent", "status": "active", "bedrooms": "3 Beds", "bedroomsAr": "3 غرف", "bathrooms": "3 Baths", "bathroomsAr": "3 حمام", "sizeSqft": "1,850 sq.ft", "sizeSqftAr": "1,850 قدم²", "parking": "2 Dedicated", "parkingAr": "موقفين مخصصين", "featured": true, "image": "almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1435.jpg", "fallbackImage": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80", "descEn": "Exceptional 3-bedroom waterfront apartment in a prime high-rise overlooking the lively Al Majaz Waterfront and Khalid Lagoon. High-ceiling panoramic glass windows, en-suite maid's room, state-of-the-art gymnasium, and infinity family pool.", "descAr": "شقة سكنية استثنائية 3 غرف وصالة في برج راقٍ يطل على واجهة المجاز وبحيرة خالد المائية. واجهات زجاجية واسعة، غرفة خادمة، مسبح عائلي وصالة لياقة بدنية مجهزة بالكامل."}, {"id": "prop_am103", "titleEn": "Ultra-Luxury 4-Bedroom Penthouse in Al Khan", "titleAr": "بنتهاوس فاخر 4 غرف نوم بإطلالة بحرية بالخان", "locationEn": "Al Khan Beachfront, Sharjah", "locationAr": "شاطئ الخان، الشارقة", "district": "khan", "priceEn": "AED 1,850,000", "priceAr": "1,850,000 درهم", "pricePeriodEn": "One-time", "pricePeriodAr": "شراء للتملك", "purpose": "sale", "category": "sale", "status": "active", "bedrooms": "4 Beds", "bedroomsAr": "4 غرف", "bathrooms": "5 Baths", "bathroomsAr": "5 حمامات", "sizeSqft": "3,400 sq.ft", "sizeSqftAr": "3,400 قدم²", "parking": "3 Covered", "parkingAr": "3 مواقف مغطاة", "featured": true, "image": "almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1472.jpg", "fallbackImage": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80", "descEn": "Palatial beachfront penthouse in Al Khan offering an expansive private sky terrace overlooking the Arabian Gulf. Built with premium Italian marble flooring, smart home automation, private elevator access, and 3 allocated parking bays. Freehold title available for all nationalities.", "descAr": "بنتهاوس شاطئي راقٍ في منطقة الخان يتميز بتراس خاص وإطلالة على الخليج العربي. رخام إيطالي فاخر، نظام منزل ذكي، مصاعد سريعة و3 مواقف سيارات مخصصة. متاح للتملك الحر."}, {"id": "prop_am105", "titleEn": "Contemporary 4BHK Family Villa in Al Taawun", "titleAr": "فيلا عائلية عصرية 4 غرف مع حديقة خاصة في التعاون", "locationEn": "Al Taawun, Sharjah", "locationAr": "التعاون، الشارقة", "district": "taawun", "priceEn": "AED 2,400,000", "priceAr": "2,400,000 درهم", "pricePeriodEn": "One-time", "pricePeriodAr": "شراء للتملك", "purpose": "sale", "category": "sale", "status": "active", "bedrooms": "4 Beds", "bedroomsAr": "4 غرف", "bathrooms": "4 Baths", "bathroomsAr": "4 حمامات", "sizeSqft": "3,800 sq.ft", "sizeSqftAr": "3,800 قدم²", "parking": "2 Covered", "parkingAr": "موقفين مغطيين", "featured": true, "image": "almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1419.jpg", "fallbackImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80", "descEn": "Architecturally striking modern 4-bedroom detached villa with private landscaped garden, covered double garage, driver room, and separate maid quarters. Minutes away from Sahara Centre, Al Taawun Mall, and primary transport links.", "descAr": "فيلا سكنية فاخرة بتصميم معماري حديث 4 غرف نوم مع حديقة خاصة منسقة وموقف سيارتين مغطى، وغرفة خادمة وسائق. قريبة من مركز صحارى ومول التعاون."}, {"id": "prop_am107", "titleEn": "The Lumina Modern Villa Concept | Architectural Blueprint", "titleAr": "تصميم فيلا لومينا العصرية | مخطط معماري وتصميم خاص", "locationEn": "Al Rahmaniya & Al Tai, Sharjah", "locationAr": "الرحمانية والسيوح، الشارقة", "district": "rahmaniya", "priceEn": "AED 3,100,000 (Turnkey)", "priceAr": "3,100,000 درهم (تسليم مفتاح)", "pricePeriodEn": "Project", "pricePeriodAr": "مشروع تصميم وبناء", "purpose": "design", "category": "design", "status": "active", "bedrooms": "5 Beds", "bedroomsAr": "5 غرف نوم", "bathrooms": "6 Baths", "bathroomsAr": "6 حمامات", "sizeSqft": "4,600 sq.ft", "sizeSqftAr": "4,600 قدم²", "parking": "3 Garage", "parkingAr": "كراج لـ 3 سيارات", "featured": true, "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80", "fallbackImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80", "descEn": "Custom architectural villa blueprint designed for private plots in Al Rahmaniya, Al Suyoh, or Al Tai. Featuring cantilevered shaded balconies, double-height lightwell atrium, private plunge pool, and sustainable energy-efficient building envelope.", "descAr": "مخطط وتصميم معماري مخصص للبناء على الأراضي السكنية في الرحمانية والسيوح والطي. يشمل واجهات زجاجية مظللة، بهو داخلي مزدوج الارتفاع، مسبح خاص وتصميم موفر للطاقة."}, {"id": "prop_am104", "titleEn": "Premium Fitted Commercial Office in Al Nahda", "titleAr": "مكتب تجاري مجهز بالكامل في النهدة على حدود دبي", "locationEn": "Al Nahda, Sharjah / Dubai Border", "locationAr": "النهدة، حدود الشارقة ودبي", "district": "nahda", "priceEn": "AED 55,000", "priceAr": "55,000 درهم", "pricePeriodEn": "Year", "pricePeriodAr": "سنوياً", "purpose": "rent", "category": "rent", "status": "active", "bedrooms": "Commercial", "bedroomsAr": "مكتب تجاري", "bathrooms": "2 Baths", "bathroomsAr": "2 حمام", "sizeSqft": "1,200 sq.ft", "sizeSqftAr": "1,200 قدم²", "parking": "2 Dedicated", "parkingAr": "موقفين مخصصين", "featured": false, "image": "almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1432.jpg", "fallbackImage": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80", "descEn": "Fully fitted Grade-A commercial office space located strategically at the border of Sharjah and Dubai in Al Nahda. Includes executive cabins, partitioned conference room, welcoming reception hall, private pantry, and high-speed fiber connectivity.", "descAr": "مكتب تجاري مجهز بالكامل ومرخص من الفئة الأولى بموقع استراتيجي على حدود دبي والشارقة في النهدة. غرف إدارة، قاعة اجتماعات، صالة استقبال، بوفيه ودورات مياه خاصة."}];
         const DEFAULT_SERVICES = [{"num": "01", "titleEn": "Property Management", "titleAr": "إدارة العقارات", "descEn": "End-to-end management for residential towers, commercial plazas, and individual portfolios across Sharjah. We handle thorough tenant screening, certified lease registrations, timely rent collections, and 24/7 technical maintenance.", "descAr": "نقدم في الميقات للعقارات إدارة شاملة للمباني والمجمعات والوحدات السكنية والتجارية. نتولى تدقيق طلبات المستأجرين، صياغة وتوثيق عقود الإيجار، تحصيل الإيجارات بانتظام، ومتابعة الصيانة الدورية والطارئة على مدار الساعة.", "icon": "M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z M9 22V12h6v10"}, {"num": "02", "titleEn": "Capital Improvement", "titleAr": "التحسين والتطوير الرأسمالي", "descEn": "Guiding property owners through modern architectural retrofits, energy-efficient upgrades, and common area renovations that directly elevate market appraisals and enhance tenancy rental premiums.", "descAr": "نساعد ملاك العقارات على تجديد وتحديث أصولهم القائمة عبر دراسات تطويرية هندسية ترفع من القيمة السوقية للعقار وتجذب نخبة المستأجرين بعوائد استثمارية أعلى مع كفاءة التكاليف.", "icon": "M12 2v20 M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"}, {"num": "03", "titleEn": "Finance Real Estate", "titleAr": "تمويل الاستثمارات العقارية", "descEn": "Specialized financing advisory connecting buyers and institutional developers with competitive mortgage packages, commercial project financing, and feasibility studies across UAE banks.", "descAr": "نقدم استشارات تمويلية متخصصة تربط المستثمرين بأفضل خيارات الرهن العقاري والقروض التمويلية المعتمدة لدى المصارف والبنوك في دولة الإمارات مع دراسات جدوى مالية متكاملة.", "icon": "M2 20h20 M5 20V8h4v12 M11 20V4h4v16 M17 20v-8h4v8"}, {"num": "04", "titleEn": "Recover Asset Value", "titleAr": "استرداد وتعظيم قيمة الأصول", "descEn": "Targeted turnaround strategies, vacancy eradication, and market repositioning for underperforming buildings across Sharjah to rapidly restore 100% occupancy and optimize net yields.", "descAr": "إذا كان لديك عقار يعاني من انخفاض نسبة الإشغال أو ضعف الإيرادات، يقوم خبراؤنا بوضع خطة استرداد فورية تشمل إعادة التسعير وحملات تسويقية استباقية لرفع الإشغال إلى أعلى مستوياته.", "icon": "M23 6l-9.5 9.5-5-5L1 18 M17 6h6v6"}, {"num": "05", "titleEn": "Financial Reporting", "titleAr": "التقارير المالية والتحليل", "descEn": "Transparent, audited monthly and quarterly financial statements detailing every Dirham collected, operational expenditure incurred, and net yields earned with complete fiscal clarity.", "descAr": "نوفر لأصحاب العقارات تقارير مالية دورية شفافة ومدققة توضح كافة التدفقات النقدية، المصروفات التشغيلية، ومؤشرات العائد على الاستثمار، مما يمنح الملاك رؤية واضحة وموثوقة.", "icon": "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z M14 2v6h6 M16 13H8 M16 17H8 M10 9H8"}, {"num": "06", "titleEn": "Buying, Selling, Leasing & Rent", "titleAr": "الوساطة في البيع، الشراء والتأجير", "descEn": "Certified brokerage services connecting discerning buyers, corporate tenants, and property owners across Sharjah and Dubai with total legal security and market-leading valuations.", "descAr": "وساطة عقارية معتمدة تربط المشترين والمستأجرين والملاك في مختلف مناطق الشارقة ودبي مع توفير الحماية القانونية الكاملة، وتصديق العقود لدى دائرة التسجيل العقاري والبلدية.", "icon": "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2 M8.5 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z M20 8v6 M23 11h-6"}];
         const DEFAULT_INQUIRIES = [{"id": "inq_01", "name": "Sultan Al Suwaidi", "phone": "+971 50 482 1199", "email": "sultan.suwaidi@gmail.com", "subject": "Executive 2BHK Residence in New Muwailah Commercial", "date": "2026-10-31 14:15", "message": "Interested in viewing the 2BHK apartment in New Muwailah this weekend. Please confirm availability and parking details."}, {"id": "inq_02", "name": "Dr. Mariam Al Nuaimi", "phone": "+971 55 930 2211", "email": "mariam.nuaimi@sharjah.ac.ae", "subject": "Full Building Property Management", "date": "2026-10-30 11:40", "message": "I own a newly constructed residential building in Muwailah (24 units) and would like to discuss full property management contract with Al Miqat."}, {"id": "inq_03", "name": "Tariq Mansoor", "phone": "+971 52 711 4488", "email": "tariq.mansoor@investcorp.ae", "subject": "Ultra-Luxury 4-Bedroom Penthouse in Al Khan", "date": "2026-10-29 16:20", "message": "Requesting a private viewing appointment for the Al Khan penthouse and inquiry about payment schedules and freehold transfer fees."}];
+        const DEFAULT_TESTIMONIALS = [{"id": "t1", "nameEn": "Salem Al Owais", "nameAr": "سالم العويس", "roleEn": "Building Owner & Real Estate Investor, Sharjah", "roleAr": "مالك بناية ومستثمر عقاري، الشارقة", "quoteEn": "“Al Miqat Real Estate managed my 32-unit residential building in New Muwailah with absolute professionalism. 100% occupancy was achieved in 3 weeks, and their monthly audited financial reporting is flawless.”", "quoteAr": "“أدارت شركة الميقات للعقارات بنايتي السكنية المكونة من 32 شقة في منطقة مويلح الجديدة باحترافية كاملة، حيث تم تأجير كافة الوحدات بنسبة 100% في أقل من 3 أسابيع، وتقاريرهم المالية الشهرية في غاية الدقة والشفافية.”", "rating": "★★★★★", "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"}, {"id": "t2", "nameEn": "Fatima Al Shamsi", "nameAr": "فاطمة الشامسي", "roleEn": "Private Villa Buyer, Al Taawun", "roleAr": "مشترية فيلا خاصة، التعاون", "quoteEn": "“Their advisory team guided us from title deed verification at the Sharjah Real Estate Registration Department right through bank financing and keys handover. Incomparable trustworthiness.”", "quoteAr": "“رافقنا فريق الميقات الاستشاري خطوة بخطوة من تدقيق سند الملكية بدائرة التسجيل العقاري بالشارقة وحتى إتمام التمويل المصرفي واستلام المفاتيح. ثقة واحترافية لا مثيل لها.”", "rating": "★★★★★", "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80"}, {"id": "t3", "nameEn": "Mohammad Khalil", "nameAr": "محمد خليل", "roleEn": "Corporate Tenant, Al Majaz Waterfront", "roleAr": "مستأجر تنفيذي، واجهة المجاز المائية", "quoteEn": "“The brokers at Al Miqat are remarkably transparent and responsive. They located a beautiful waterfront home for my family in Al Khan within budget and handled all municipality paperwork effortlessly.”", "quoteAr": "“فريق العمل في الميقات متميزون جداً في الشفافية والسرعة. وجدوا لمنزلي خياراً بحرياً رائعاً في منطقة الخان وأنهوا كافة معاملات تصديق العقد ببلدية الشارقة بسلاسة تامة.”", "rating": "★★★★★", "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80"}];
+        const DEFAULT_CAROUSEL = [{"id": "c1", "titleEn": "Prime Urban Architecture in Muwailah Commercial", "titleAr": "معمار حضري رائد في قلب مويلح التجارية", "tagEn": "FEATURED COMMUNITY", "tagAr": "مجتمع سكني مميز", "image": "almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1450.jpg", "fallback": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80"}, {"id": "c2", "titleEn": "Lagoon Waterfront Panoramas at Al Majaz", "titleAr": "إطلالات بانورامية ساحرة على واجهة المجاز المائية", "tagEn": "WATERFRONT COLLECTION", "tagAr": "عقارات الواجهة البحرية", "image": "almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1435.jpg", "fallback": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80"}, {"id": "c3", "titleEn": "Exclusive Beachfront Penthouses in Al Khan", "titleAr": "بنتهاوس شاطئي استثنائي على سواحل الخان", "tagEn": "ULTRA-LUXURY RESIDENCES", "tagAr": "مساكن فاخرة", "image": "almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1472.jpg", "fallback": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"}];
 
         let isAr = false;
+        let currentCategory = 'all';
+        let currentDistrict = 'all';
+        let carouselCurrentIndex = 0;
+        let carouselTimer = null;
 
         function getPropertiesDb() {
             const stored = localStorage.getItem('almiqat_properties_db');
@@ -2331,6 +2692,21 @@
             renderAdminInquiriesTable();
         }
 
+        function getTestimonialsDb() {
+            const stored = localStorage.getItem('almiqat_testimonials_db');
+            if (stored) {
+                try { return JSON.parse(stored); } catch(e) {}
+            }
+            localStorage.setItem('almiqat_testimonials_db', JSON.stringify(DEFAULT_TESTIMONIALS));
+            return [...DEFAULT_TESTIMONIALS];
+        }
+
+        function saveTestimonialsDb(tests) {
+            localStorage.setItem('almiqat_testimonials_db', JSON.stringify(tests));
+            renderTestimonials();
+            renderAdminTestimonialsList();
+        }
+
         // --- 2. LENIS SMOOTH SCROLLING SETUP ---
         let lenisInstance = null;
         function initSmoothScroll() {
@@ -2355,67 +2731,40 @@
 
         // --- 3. GSAP ANIMATIONS & LINE REVEALS ---
         function initGsapAnimations() {
+            // Fail-safe: Ensure all content is immediately 100% visible
+            document.querySelectorAll('.line-inner, .section-headline, .section-eyebrow, .hb-roadmap-card, .almiqat-service-card, .almiqat-property-card, .hero-subtitle, .hero-cta-group').forEach(el => {
+                el.style.opacity = '1';
+                el.style.visibility = 'visible';
+            });
+
             if (typeof gsap === 'undefined') return;
             if (typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 
             const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             if (prefersReducedMotion) return;
 
-            // Hero line-by-line masked reveals
-            gsap.from('.hero-headline .line-inner', {
-                yPercent: 110,
-                duration: 1.05,
-                ease: 'power4.out',
-                stagger: 0.15,
-                delay: 0.15
-            });
+            // Connect Lenis to ScrollTrigger
+            if (lenisInstance && typeof ScrollTrigger !== 'undefined') {
+                lenisInstance.on('scroll', ScrollTrigger.update);
+                gsap.ticker.add((time) => {
+                    lenisInstance.raf(time * 1000);
+                });
+                gsap.ticker.lagSmoothing(0);
+            }
 
-            gsap.from('.hero-subtitle, .hero-cta-group, .hb-hero-search-card', {
-                opacity: 0,
-                y: 28,
-                duration: 0.85,
-                ease: 'power3.out',
-                stagger: 0.12,
-                delay: 0.45
-            });
+            // Smooth hero subtle entrance
+            gsap.fromTo('.hero-headline .line-inner', 
+                { y: 16, opacity: 0.35 }, 
+                { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out', stagger: 0.12, delay: 0.1 }
+            );
 
-            gsap.from('.hero-media-card', {
-                opacity: 0,
-                scale: 0.96,
-                duration: 1.1,
-                ease: 'power3.out',
-                delay: 0.35
-            });
+            gsap.fromTo('.hero-subtitle, .hero-cta-group, .hb-hero-search-card', 
+                { y: 14, opacity: 0.35 }, 
+                { y: 0, opacity: 1, duration: 0.7, ease: 'power2.out', stagger: 0.08, delay: 0.25 }
+            );
 
-            // Section headings reveal
+            // Parallax images in gallery
             if (typeof ScrollTrigger !== 'undefined') {
-                gsap.utils.toArray('.section-headline, .section-eyebrow').forEach(el => {
-                    gsap.from(el, {
-                        scrollTrigger: {
-                            trigger: el,
-                            start: 'top 88%'
-                        },
-                        opacity: 0,
-                        y: 26,
-                        duration: 0.75,
-                        ease: 'power2.out'
-                    });
-                });
-
-                // Roadmap 3-cards staggered reveal
-                gsap.from('.hb-roadmap-card', {
-                    scrollTrigger: {
-                        trigger: '#howItWorks',
-                        start: 'top 82%'
-                    },
-                    opacity: 0,
-                    y: 35,
-                    duration: 0.8,
-                    stagger: 0.14,
-                    ease: 'power2.out'
-                });
-
-                // Parallax images in gallery
                 gsap.utils.toArray('.hb-parallax-img').forEach(img => {
                     gsap.to(img, {
                         yPercent: -12,
@@ -2427,9 +2776,45 @@
                     });
                 });
             }
+
+            // Safety fail-safe check
+            setTimeout(() => {
+                document.querySelectorAll('.line-inner, .section-headline, .section-eyebrow, .hb-roadmap-card, .almiqat-service-card, .almiqat-property-card, .hero-subtitle, .hero-cta-group').forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.visibility = 'visible';
+                });
+            }, 600);
         }
 
-        // --- 4. STICKY NAVBAR SCROLL LISTENER ---
+        // --- 4. ROTATING HERO COLLECTION BADGE ---
+        function initHeroBadgeRotation() {
+            const districts = [
+                { name: 'NEW MUWAILAH COMMERCIAL', sub: 'Direct Landlord Representation' },
+                { name: 'AL MAJAZ WATERFRONT', sub: 'Panoramic Khalid Lagoon Views' },
+                { name: 'AL KHAN BEACHFRONT', sub: 'Exclusive Penthouse Collections' },
+                { name: 'AL TAAWUN & NAHDA', sub: 'Executive Villas & Corporate Suites' }
+            ];
+            let idx = 0;
+            const districtEl = document.getElementById('heroBadgeDistrict');
+            const subEl = document.getElementById('heroBadgeSubtitle');
+            const badgeEl = document.getElementById('heroRotatingBadge');
+
+            if (!districtEl || !subEl || !badgeEl) return;
+
+            setInterval(() => {
+                idx = (idx + 1) % districts.length;
+                badgeEl.style.opacity = '0';
+                badgeEl.style.transform = 'translateY(8px) scale(0.98)';
+                setTimeout(() => {
+                    districtEl.innerText = districts[idx].name;
+                    subEl.innerText = districts[idx].sub;
+                    badgeEl.style.opacity = '1';
+                    badgeEl.style.transform = 'translateY(0) scale(1)';
+                }, 400);
+            }, 4500);
+        }
+
+        // --- 5. STICKY NAVBAR SCROLL LISTENER ---
         function initNavbarScroll() {
             const header = document.getElementById('almiqatHeader');
             if (!header) return;
@@ -2443,7 +2828,7 @@
             }, { passive: true });
         }
 
-        // --- 5. RENDER SERVICES SECTION ---
+        // --- 6. RENDER SERVICES SECTION (6 Services) ---
         function renderServices() {
             const grid = document.getElementById('almiqatServicesGrid');
             if (!grid) return;
@@ -2471,24 +2856,53 @@
             }).join('');
         }
 
-        // --- 6. RENDER PROPERTIES CARDS ---
-        function renderAllPropertiesOnSite(filter = 'all') {
+        // --- 7. RENDER PROPERTIES CARDS & CATEGORY TOGGLE ---
+        function switchPropCategory(cat, btnEl) {
+            currentCategory = cat;
+            document.querySelectorAll('#propCategoryToggle .hb-toggle-btn').forEach(b => b.classList.remove('active'));
+            if (btnEl) btnEl.classList.add('active');
+            renderAllPropertiesOnSite();
+        }
+
+        function filterByDistrict(dist, btnEl) {
+            currentDistrict = dist;
+            document.querySelectorAll('#almiqatFilterPills .hb-filter-tab').forEach(b => b.classList.remove('active'));
+            if (btnEl) btnEl.classList.add('active');
+            renderAllPropertiesOnSite();
+        }
+
+        function quickFilterByDistrict(dist) {
+            currentDistrict = dist;
+            currentCategory = 'all';
+            document.querySelectorAll('#propCategoryToggle .hb-toggle-btn').forEach(b => b.classList.remove('active'));
+            const allCatBtn = document.querySelector('#propCategoryToggle [data-category="all"]');
+            if (allCatBtn) allCatBtn.classList.add('active');
+
+            document.querySelectorAll('#almiqatFilterPills .hb-filter-tab').forEach(b => b.classList.remove('active'));
+            const distBtn = document.querySelector(`#almiqatFilterPills [data-district="${dist}"]`);
+            if (distBtn) distBtn.classList.add('active');
+
+            const section = document.getElementById('almiqatPropertiesSection');
+            if (section) section.scrollIntoView({ behavior: 'smooth' });
+            renderAllPropertiesOnSite();
+            showToast('Filtering listings for: ' + dist.toUpperCase());
+        }
+
+        function renderAllPropertiesOnSite() {
             const container = document.getElementById('almiqatPropertyCardsContainer');
             if (!container) return;
 
             const props = getPropertiesDb();
             let filtered = props;
 
-            if (filter === 'rent') {
-                filtered = props.filter(p => p.purpose === 'rent');
-            } else if (filter === 'sale') {
-                filtered = props.filter(p => p.purpose === 'sale');
-            } else if (filter === 'muwailah') {
-                filtered = props.filter(p => p.locationEn.toLowerCase().includes('muwailah'));
-            } else if (filter === 'majaz') {
-                filtered = props.filter(p => p.locationEn.toLowerCase().includes('majaz'));
-            } else if (filter === 'khan') {
-                filtered = props.filter(p => p.locationEn.toLowerCase().includes('khan'));
+            // Category filter: all, sale, rent, design
+            if (currentCategory !== 'all') {
+                filtered = filtered.filter(p => p.category === currentCategory || p.purpose === currentCategory);
+            }
+
+            // District filter: all, muwailah, majaz, khan, taawun, rahmaniya
+            if (currentDistrict !== 'all') {
+                filtered = filtered.filter(p => (p.district === currentDistrict) || p.locationEn.toLowerCase().includes(currentDistrict));
             }
 
             if (filtered.length === 0) {
@@ -2505,15 +2919,17 @@
                 const location = isAr ? prop.locationAr : prop.locationEn;
                 const price = isAr ? prop.priceAr : prop.priceEn;
                 const period = prop.pricePeriodEn === 'Year' ? (isAr ? '/سنوياً' : '/yr') : '';
-                const purposeLabel = prop.purpose === 'sale' 
-                    ? (isAr ? 'للبيع' : 'FOR SALE') 
-                    : (isAr ? 'للإيجار' : 'FOR RENT');
+                
+                let purposeBadge = 'FOR RENT';
+                if (prop.purpose === 'sale') purposeBadge = isAr ? 'للبيع' : 'FOR SALE';
+                else if (prop.purpose === 'design') purposeBadge = isAr ? 'تصميم وبناء' : 'HOME DESIGN';
+                else purposeBadge = isAr ? 'للإيجار' : 'FOR RENT';
 
                 return `
                     <div class="almiqat-property-card" id="${prop.id}">
                         <div class="hb-card-media">
-                            <img src="${prop.image}" alt="${title}" loading="lazy" onerror="if(this.src!==this.dataset.fallback)this.src=this.dataset.fallback;">
-                            <span class="hb-card-badge">${purposeLabel}</span>
+                            <img src="${prop.image}" alt="${title}" loading="lazy" onerror="if(this.src!=='${prop.fallbackImage}')this.src='${prop.fallbackImage}';">
+                            <span class="hb-card-badge">${purposeBadge}</span>
                             <div class="hb-card-price-tag">${price} <span style="font-size: 11.5px; font-weight: normal; color: var(--hb-muted);">${period}</span></div>
                         </div>
 
@@ -2557,19 +2973,120 @@
             }).join('');
         }
 
-        function filterProperties(category, btnEl) {
-            document.querySelectorAll('.hb-filter-tab').forEach(b => b.classList.remove('active'));
-            if (btnEl) btnEl.classList.add('active');
-            renderAllPropertiesOnSite(category);
+        // --- 8. FEATURE CAROUSEL SLIDER ENGINE (Auto-Sliding with Drag, Arrows, Dots) ---
+        function initFeatureCarousel() {
+            const track = document.getElementById('hbCarouselTrack');
+            const dotsContainer = document.getElementById('hbCarouselDots');
+            if (!track || !dotsContainer) return;
+
+            track.innerHTML = DEFAULT_CAROUSEL.map((slide, idx) => `
+                <div class="hb-carousel-slide">
+                    <img src="${slide.image}" alt="${slide.titleEn}" onerror="this.src='${slide.fallback}';">
+                    <div class="hb-carousel-caption">
+                        <span class="section-eyebrow" style="color: var(--hb-gold);">${slide.tagEn}</span>
+                        <h3 class="headline-display" style="color: #fff; font-size: clamp(22px, 3vw, 32px);">${slide.titleEn}</h3>
+                    </div>
+                </div>
+            `).join('');
+
+            dotsContainer.innerHTML = DEFAULT_CAROUSEL.map((_, idx) => `
+                <div class="hb-carousel-dot ${idx === 0 ? 'active' : ''}" onclick="goToCarouselSlide(${idx});"></div>
+            `).join('');
+
+            startCarouselAutoTimer();
+
+            // Drag / Swipe support
+            let startX = 0;
+            let isDragging = false;
+            track.addEventListener('mousedown', (e) => { startX = e.pageX; isDragging = true; });
+            track.addEventListener('mouseup', (e) => {
+                if (!isDragging) return;
+                isDragging = false;
+                const diff = e.pageX - startX;
+                if (diff < -50) carouselNext();
+                else if (diff > 50) carouselPrev();
+            });
+            track.addEventListener('touchstart', (e) => { startX = e.touches[0].pageX; isDragging = true; }, { passive: true });
+            track.addEventListener('touchend', (e) => {
+                if (!isDragging) return;
+                isDragging = false;
+                const diff = e.changedTouches[0].pageX - startX;
+                if (diff < -40) carouselNext();
+                else if (diff > 40) carouselPrev();
+            });
         }
 
-        function quickFilterByLocation(loc) {
-            const section = document.getElementById('almiqatPropertiesSection');
-            if (section) section.scrollIntoView({ behavior: 'smooth' });
-            filterProperties(loc, document.querySelector(`[data-location="${loc}"]`));
+        function startCarouselAutoTimer() {
+            clearInterval(carouselTimer);
+            carouselTimer = setInterval(carouselNext, 5000);
         }
 
-        // --- 7. PROPERTY DETAILS LIGHTBOX MODAL ---
+        function updateCarouselPosition() {
+            const track = document.getElementById('hbCarouselTrack');
+            if (!track) return;
+            track.style.transform = `translateX(-${carouselCurrentIndex * 100}%)`;
+            document.querySelectorAll('.hb-carousel-dot').forEach((d, i) => {
+                d.classList.toggle('active', i === carouselCurrentIndex);
+            });
+        }
+
+        function carouselNext() {
+            carouselCurrentIndex = (carouselCurrentIndex + 1) % DEFAULT_CAROUSEL.length;
+            updateCarouselPosition();
+            startCarouselAutoTimer();
+        }
+
+        function carouselPrev() {
+            carouselCurrentIndex = (carouselCurrentIndex - 1 + DEFAULT_CAROUSEL.length) % DEFAULT_CAROUSEL.length;
+            updateCarouselPosition();
+            startCarouselAutoTimer();
+        }
+
+        function goToCarouselSlide(idx) {
+            carouselCurrentIndex = idx;
+            updateCarouselPosition();
+            startCarouselAutoTimer();
+        }
+
+        // --- 9. RENDER TESTIMONIALS SECTION ---
+        function renderTestimonials() {
+            const grid = document.getElementById('almiqatTestimonialsGrid');
+            if (!grid) return;
+            const tests = getTestimonialsDb();
+
+            grid.innerHTML = tests.map(t => {
+                const name = isAr ? t.nameAr : t.nameEn;
+                const role = isAr ? t.roleAr : t.roleEn;
+                const quote = isAr ? t.quoteAr : t.quoteEn;
+
+                return `
+                    <div class="hb-testimonial-card">
+                        <div>
+                            <div class="hb-testimonial-stars">${t.rating}</div>
+                            <p class="hb-testimonial-quote">${quote}</p>
+                        </div>
+                        <div class="hb-testimonial-author">
+                            <img src="${t.avatar}" alt="${name}" class="hb-testimonial-avatar" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80';">
+                            <div>
+                                <strong style="display: block; font-size: 15px; color: var(--hb-dark);">${name}</strong>
+                                <span style="font-size: 12.5px; color: var(--hb-muted);">${role}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function toggleTestimonialsVisibility() {
+            const sec = document.getElementById('testimonialsSection');
+            if (!sec) return;
+            const isHidden = (sec.style.display === 'none');
+            sec.style.display = isHidden ? 'block' : 'none';
+            document.getElementById('btnToggleTestimonials').innerText = isHidden ? '👁️ Hide Testimonials' : '👁️ Show Testimonials';
+            showToast(isHidden ? 'Testimonials section displayed' : 'Testimonials section hidden');
+        }
+
+        // --- 10. PROPERTY DETAILS LIGHTBOX MODAL ---
         function openPropDetailsModal(propId) {
             const props = getPropertiesDb();
             const prop = props.find(p => p.id === propId);
@@ -2582,11 +3099,11 @@
 
             body.innerHTML = `
                 <div style="border-radius: 8px; overflow: hidden; margin-bottom: 20px; max-height: 360px;">
-                    <img src="${prop.image}" alt="${title}" style="width: 100%; height: 100%; object-fit: cover;" onerror="if(this.src!==this.dataset.fallback)this.src=this.dataset.fallback;">
+                    <img src="${prop.image}" alt="${title}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='${prop.fallbackImage}';">
                 </div>
                 <h3 class="headline-display" style="font-size: 22px; margin-bottom: 8px;">${title}</h3>
                 <div style="font-size: 18px; font-weight: 800; color: var(--hb-teal); margin-bottom: 14px;">${price}</div>
-                <p style="font-size: 14.5px; color: var(--hb-slate); line-height: 1.65; margin-bottom: 24px;">${desc}</p>
+                <p style="font-size: 15px; color: var(--hb-slate); line-height: 1.65; margin-bottom: 24px;">${desc}</p>
                 <div style="display: flex; gap: 12px;">
                     <button type="button" class="hb-btn hb-btn-primary" style="flex: 1;" onclick="closePropDetailsModal(); openEnquiryModal('${prop.titleEn}');">
                         <span>${isAr ? 'حجز موعد للمعاينة' : 'Schedule a Private Tour'}</span>
@@ -2604,7 +3121,7 @@
             document.getElementById('almiqatPropertyDetailsModal').style.display = 'none';
         }
 
-        // --- 8. ROI CALCULATOR ENGINE ---
+        // --- 11. ROI CALCULATOR ENGINE ---
         function calculateRoi() {
             const price = parseFloat(document.getElementById('sliderPrice').value);
             const rent = parseFloat(document.getElementById('sliderRent').value);
@@ -2621,31 +3138,28 @@
             document.getElementById('calcNetCashflow').innerText = 'AED ' + netReturn.toLocaleString() + ' / Year Net';
         }
 
-        // --- 9. BILINGUAL TOGGLE (EN <-> AR RTL) ---
-        // Header brand logo is kept ENGLISH ONLY per explicit user request
+        // --- 12. BILINGUAL TOGGLE (EN <-> AR RTL) ---
         function toggleLang() {
             isAr = !isAr;
             const html = document.documentElement;
             html.setAttribute('dir', isAr ? 'rtl' : 'ltr');
             html.setAttribute('lang', isAr ? 'ar' : 'en');
 
-            // Update language toggle button text
             const btnCode = document.querySelector('.almiqat-lang-code');
             if (btnCode) btnCode.innerText = isAr ? 'English' : 'عربي';
 
-            // Translate all elements with data-en and data-ar
             document.querySelectorAll('.t-txt').forEach(el => {
                 const target = isAr ? el.getAttribute('data-ar') : el.getAttribute('data-en');
                 if (target) el.innerHTML = target;
             });
 
-            // Re-render dynamic components
             renderServices();
             renderAllPropertiesOnSite();
+            renderTestimonials();
             calculateRoi();
         }
 
-        // --- 10. MODAL CONTROLLERS & FORM SUBMISSIONS ---
+        // --- 13. MODAL CONTROLLERS & FORM SUBMISSIONS ---
         function openEnquiryModal(title = 'General Inquiry') {
             document.getElementById('enquiryPropTitleInput').value = title;
             const titleEl = document.getElementById('enquiryModalTargetTitle');
@@ -2675,7 +3189,7 @@
                 email: email || 'N/A',
                 subject: subject,
                 date: dateStr,
-                message: msg || 'Viewing / inquiry request'
+                message: msg || 'Viewing / consultation lead'
             };
 
             const inqs = getInquiriesDb();
@@ -2683,11 +3197,10 @@
             saveInquiriesDb(inqs);
 
             closeEnquiryModal();
-            showToast('✅ Inquiry successfully submitted! Our Sharjah property advisor will contact you.');
+            showToast('✅ Inquiry successfully submitted! Our portfolio advisor will contact you.');
             e.target.reset();
         }
 
-        // Maintenance Modal
         function openMaintenanceModal() {
             document.getElementById('almiqatMaintenanceModal').style.display = 'flex';
         }
@@ -2697,11 +3210,10 @@
         function handleMaintenanceSubmit(e) {
             e.preventDefault();
             closeMaintenanceModal();
-            showToast('🔧 Maintenance ticket dispatched. Emergency response team notified.');
+            showToast('🔧 Maintenance ticket dispatched to Al Miqat emergency team.');
             e.target.reset();
         }
 
-        // Landlord Modal
         function openLandlordModal() {
             document.getElementById('almiqatLandlordModal').style.display = 'flex';
         }
@@ -2711,17 +3223,15 @@
         function handleLandlordSubmit(e) {
             e.preventDefault();
             closeLandlordModal();
-            showToast('🔑 Property registration received. Our portfolio manager will reach out.');
+            showToast('🔑 Property submitted. Our building management division will contact you.');
             e.target.reset();
         }
 
-        // Mobile Nav
         function toggleMobileNav() {
             const drawer = document.getElementById('hbMobileDrawer');
             if (drawer) drawer.classList.toggle('open');
         }
 
-        // Quick Search
         function triggerHeroSearch() {
             const query = document.getElementById('heroQuickSearch').value.toLowerCase().trim();
             if (!query) return;
@@ -2748,7 +3258,7 @@
             if (e.key === 'Enter') triggerHeroSearch();
         }
 
-        // --- 11. ADMIN & STAFF SUITE CONTROLLERS ---
+        // --- 14. ADMIN & STAFF SUITE CONTROLLERS (Secure Login: almiqatserver@gmail.com / almiqat@123) ---
         function openAdminAccessModal() {
             document.getElementById('almiqatAdminAccessModal').style.display = 'flex';
             checkAdminSession();
@@ -2771,6 +3281,7 @@
                 renderAdminPropertiesTable();
                 renderAdminInquiriesTable();
                 renderAdminServicesList();
+                renderAdminTestimonialsList();
             } else {
                 switchAdminView('login');
             }
@@ -2782,9 +3293,8 @@
             const p = document.getElementById('adminInputPass').value;
             const alertBox = document.getElementById('adminLoginAlert');
 
-            // Authorized credentials
-            const validUsers = ['admin@almiqat.ae', 'almiqatserver@gmail.com', 'admin'];
-            const validPass = 'AlMiqat2026!';
+            const validUsers = ['almiqatserver@gmail.com', 'admin@almiqat.ae', 'admin'];
+            const validPass = 'almiqat@123';
 
             if (validUsers.includes(u.toLowerCase()) && p === validPass) {
                 sessionStorage.setItem('almiqat_admin_session', 'active');
@@ -2793,12 +3303,13 @@
                 renderAdminPropertiesTable();
                 renderAdminInquiriesTable();
                 renderAdminServicesList();
+                renderAdminTestimonialsList();
                 showToast('🔓 Successfully logged in to Al Miqat Admin Suite');
             } else {
                 alertBox.style.display = 'block';
                 alertBox.style.background = '#FEE2E2';
                 alertBox.style.color = '#B91C1C';
-                alertBox.innerText = 'Invalid username or password. Demo: admin@almiqat.ae / AlMiqat2026!';
+                alertBox.innerText = 'Invalid username or password. Authorized Login: almiqatserver@gmail.com / almiqat@123';
             }
         }
 
@@ -2835,7 +3346,7 @@
             tbody.innerHTML = props.map(prop => `
                 <tr>
                     <td style="width: 70px;">
-                        <img src="${prop.image}" style="width: 56px; height: 42px; object-fit: cover; border-radius: 4px;" onerror="if(this.src!==this.dataset.fallback)this.src=this.dataset.fallback;">
+                        <img src="${prop.image}" style="width: 56px; height: 42px; object-fit: cover; border-radius: 4px;" onerror="this.src='${prop.fallbackImage}';">
                     </td>
                     <td>
                         <strong style="color: var(--hb-dark);">${prop.titleEn}</strong><br>
@@ -2867,7 +3378,7 @@
             const size = document.getElementById('newPropSize').value.trim() || '1,200 sq.ft';
             const parking = document.getElementById('newPropParking').value.trim() || '1 Covered';
             const location = document.getElementById('newPropLocation').value.trim() || 'New Muwailah, Sharjah';
-            const image = document.getElementById('newPropImage').value.trim() || 'almiqat-theme/assets/images/properties/muwailah-luxury-unit/img_1450.jpg';
+            const image = document.getElementById('newPropImage').value.trim() || 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80';
 
             if (!titleEn || !price) {
                 alert('Please provide title and price.');
@@ -2880,11 +3391,13 @@
                 titleAr: titleAr || titleEn,
                 locationEn: location,
                 locationAr: location,
+                district: 'muwailah',
                 priceEn: price,
                 priceAr: price,
                 pricePeriodEn: purpose === 'rent' ? 'Year' : 'One-time',
                 pricePeriodAr: purpose === 'rent' ? 'سنوياً' : 'شراء',
                 purpose: purpose,
+                category: purpose,
                 status: 'active',
                 bedrooms: beds,
                 bedroomsAr: beds,
@@ -2896,6 +3409,7 @@
                 parkingAr: parking,
                 featured: true,
                 image: image,
+                fallbackImage: image,
                 descEn: titleEn + ' located in ' + location + '.',
                 descAr: titleAr + ' في ' + location + '.'
             };
@@ -2958,6 +3472,37 @@
             }
         }
 
+        // Admin: Testimonials List
+        function renderAdminTestimonialsList() {
+            const container = document.getElementById('adminTestimonialsList');
+            if (!container) return;
+            const tests = getTestimonialsDb();
+
+            document.getElementById('adminTestCountBadge').innerText = tests.length;
+
+            container.innerHTML = tests.map(t => `
+                <div style="background: #F8FAFC; border: 1px solid var(--hb-border); border-radius: 6px; padding: 16px; margin-bottom: 12px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                        <strong>${t.nameEn} (${t.roleEn})</strong>
+                        <button type="button" class="hb-btn hb-btn-secondary hb-btn-sm" onclick="editTestimonialQuote('${t.id}');" style="padding: 3px 10px; font-size: 12px;">✏️ Edit Quote</button>
+                    </div>
+                    <p style="font-size: 13px; color: var(--hb-slate); font-style: italic;">${t.quoteEn}</p>
+                </div>
+            `).join('');
+        }
+
+        function editTestimonialQuote(id) {
+            const tests = getTestimonialsDb();
+            const t = tests.find(item => item.id === id);
+            if (!t) return;
+            const updated = prompt('Edit testimonial quote for ' + t.nameEn, t.quoteEn);
+            if (updated && updated.trim()) {
+                t.quoteEn = updated.trim();
+                saveTestimonialsDb(tests);
+                showToast('Testimonial quote updated');
+            }
+        }
+
         // Admin: Inquiries Table
         function renderAdminInquiriesTable() {
             const tbody = document.getElementById('adminInquiriesTbody');
@@ -2970,7 +3515,7 @@
                 <tr>
                     <td style="white-space: nowrap; font-size: 12px; color: var(--hb-muted);">${inq.date}</td>
                     <td style="font-weight: 700; color: var(--hb-dark);">${inq.name}</td>
-                    <td><a href="tel:${inq.phone}" style="color: var(--hb-teal);">${inq.phone}</a></td>
+                    <td><a href="tel:${inq.phone}" style="color: var(--hb-teal); font-weight: 600;">${inq.phone}</a></td>
                     <td><a href="mailto:${inq.email}" style="color: var(--hb-muted);">${inq.email}</a></td>
                     <td style="font-weight: 600; font-size: 12.5px;">${inq.subject}</td>
                     <td style="font-size: 12.5px; color: var(--hb-slate);">${inq.message}</td>
@@ -2978,7 +3523,7 @@
             `).join('');
         }
 
-        // --- 12. EXPORT INQUIRIES TO CSV (STEP 3 REQUIREMENT) ---
+        // CSV Export
         function exportInquiriesToCsv() {
             const inqs = getInquiriesDb();
             if (inqs.length === 0) {
@@ -3020,7 +3565,6 @@
             const phone = document.getElementById('cfgContactPhone').value;
             const email = document.getElementById('cfgContactEmail').value;
 
-            // Update live DOM
             document.getElementById('heroEyebrow').innerText = heroEyebrow;
             document.getElementById('heroHeadline').innerText = heroHeadline;
             document.getElementById('heroSubtitle').innerText = heroSubtitle;
@@ -3031,7 +3575,7 @@
         }
 
         function saveAndPublishSite() {
-            showToast('💾 All content and properties published live to store.');
+            showToast('💾 All content, properties and reviews published live.');
         }
 
         // System & Backup
@@ -3039,7 +3583,8 @@
             const dump = {
                 exportedAt: new Date().toISOString(),
                 properties: getPropertiesDb(),
-                inquiries: getInquiriesDb()
+                inquiries: getInquiriesDb(),
+                testimonials: getTestimonialsDb()
             };
             const blob = new Blob([JSON.stringify(dump, null, 2)], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
@@ -3060,6 +3605,7 @@
                     const data = JSON.parse(e.target.result);
                     if (data.properties) savePropertiesDb(data.properties);
                     if (data.inquiries) saveInquiriesDb(data.inquiries);
+                    if (data.testimonials) saveTestimonialsDb(data.testimonials);
                     showToast('✅ Database restored successfully');
                 } catch(err) {
                     alert('Invalid JSON backup file.');
@@ -3069,16 +3615,17 @@
         }
 
         function resetDatabaseToDefault() {
-            if (!confirm('Reset all properties and inquiries to default seed data?')) return;
+            if (!confirm('Reset all properties, reviews, and inquiries to default seed data?')) return;
             localStorage.removeItem('almiqat_properties_db');
             localStorage.removeItem('almiqat_inquiries_db');
+            localStorage.removeItem('almiqat_testimonials_db');
             renderAllPropertiesOnSite();
             renderAdminPropertiesTable();
             renderAdminInquiriesTable();
+            renderAdminTestimonialsList();
             showToast('Database reset to default seed data.');
         }
 
-        // Toast Helper
         function showToast(msg) {
             const toast = document.getElementById('adminToast');
             if (!toast) return;
@@ -3087,21 +3634,21 @@
             setTimeout(() => toast.classList.remove('show'), 3500);
         }
 
-        // --- 13. INITIALIZATION ON DOM READY ---
+        // --- 15. INITIALIZATION ON DOM READY ---
         document.addEventListener('DOMContentLoaded', () => {
-            // Year in footer
             const yr = document.getElementById('currYear');
             if (yr) yr.innerText = new Date().getFullYear();
 
-            // Initialize components
             initNavbarScroll();
             initSmoothScroll();
+            initHeroBadgeRotation();
             renderServices();
             renderAllPropertiesOnSite();
+            initFeatureCarousel();
+            renderTestimonials();
             calculateRoi();
             initGsapAnimations();
 
-            // Check URL hash for admin portal
             if (window.location.hash === '#admin' || window.location.search.includes('admin=true')) {
                 openAdminAccessModal();
             }
