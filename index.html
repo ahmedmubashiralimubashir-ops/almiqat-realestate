@@ -2067,6 +2067,162 @@
                 grid-template-columns: 1fr;
             }
         }
+    
+        /* ==========================================================================
+           MODALS STRICT POPUP OVERLAY (NEVER SHOW INLINE IN PAGE FLOW)
+           ========================================================================== */
+        .almiqat-modal-overlay {
+            display: none !important;
+            position: fixed !important;
+            inset: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            background: rgba(11, 19, 32, 0.78) !important;
+            backdrop-filter: blur(8px) !important;
+            -webkit-backdrop-filter: blur(8px) !important;
+            z-index: 999999 !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 20px !important;
+            overflow-y: auto !important;
+            box-sizing: border-box !important;
+        }
+
+        .almiqat-modal-overlay.open,
+        .almiqat-modal-overlay.active {
+            display: flex !important;
+        }
+
+        .almiqat-modal-dialog {
+            background: #FFFFFF !important;
+            border-radius: 16px !important;
+            max-width: 540px !important;
+            width: 100% !important;
+            margin: auto !important;
+            position: relative !important;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4) !important;
+            border: 1px solid var(--hb-border) !important;
+            animation: modalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+
+        .almiqat-modal-dialog-large {
+            max-width: 1050px !important;
+        }
+
+        .almiqat-modal-close {
+            position: absolute !important;
+            top: 16px !important;
+            right: 20px !important;
+            background: none !important;
+            border: none !important;
+            font-size: 28px !important;
+            color: var(--hb-muted) !important;
+            cursor: pointer !important;
+            line-height: 1 !important;
+            z-index: 10 !important;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(14px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* ==========================================================================
+           DEDICATED KEY PERFORMANCE METRICS SECTION (Image 4 Reference)
+           ========================================================================== */
+        .hb-stats-section {
+            background-color: #FFFFFF;
+            padding: 80px 0 75px 0;
+            border-bottom: 1.5px solid var(--hb-border);
+            position: relative;
+        }
+
+        .hb-stats-counter-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 36px;
+        }
+
+        .hb-stat-card-featured {
+            background: #FFFFFF;
+            border: 1.5px solid var(--hb-border);
+            border-radius: 16px;
+            padding: 34px 28px;
+            box-shadow: 0 8px 24px rgba(13, 75, 87, 0.06);
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hb-stat-card-featured:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(13, 75, 87, 0.14);
+            border-color: var(--hb-teal);
+        }
+
+        .hb-stat-card-badge {
+            display: inline-block;
+            background: rgba(13, 75, 87, 0.08);
+            color: var(--hb-teal);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            padding: 4px 12px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+            width: fit-content;
+            text-transform: uppercase;
+        }
+
+        .hb-stat-number-wrap {
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+            font-family: var(--hb-font-sans);
+            font-size: clamp(38px, 3.8vw, 54px);
+            font-weight: 800;
+            color: var(--hb-dark);
+            line-height: 1.05;
+            margin-bottom: 12px;
+        }
+
+        .hb-stat-num {
+            font-variant-numeric: tabular-nums;
+            color: var(--hb-dark);
+            font-weight: 800;
+        }
+
+        .hb-stat-plus {
+            color: #FBBF24;
+            font-weight: 800;
+            font-size: 0.9em;
+        }
+
+        .hb-stat-title {
+            font-family: var(--hb-font-sans);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--hb-dark);
+            margin: 0 0 10px 0;
+        }
+
+        .hb-stat-desc {
+            font-size: 14px;
+            color: var(--hb-muted);
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .hb-stats-counter-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -2173,27 +2329,7 @@
                         </button>
                     </div>
 
-                    <!-- Real Estate Key Metrics & Stats Counter (Image 4 Reference) -->
-                    <div class="hb-hero-stats-grid" id="heroStatsSection">
-                        <div class="hb-stat-card">
-                            <div class="hb-stat-number-wrap">
-                                <span class="hb-stat-num" data-target="1000">0</span><span class="hb-stat-plus">+</span>
-                            </div>
-                            <div class="hb-stat-label t-txt" data-en="Happy Customers" data-ar="عميل ومستثمر سعيد">Happy Customers</div>
-                        </div>
-                        <div class="hb-stat-card">
-                            <div class="hb-stat-number-wrap">
-                                <span class="hb-stat-num" data-target="300">0</span><span class="hb-stat-plus">+</span>
-                            </div>
-                            <div class="hb-stat-label t-txt" data-en="Apartments" data-ar="شقة ووحدة سكنية">Apartments</div>
-                        </div>
-                        <div class="hb-stat-card">
-                            <div class="hb-stat-number-wrap">
-                                <span class="hb-stat-num" data-target="20">0</span><span class="hb-stat-plus">+</span>
-                            </div>
-                            <div class="hb-stat-label t-txt" data-en="Properties" data-ar="مشروع وعقار معتمد">Properties</div>
-                        </div>
-                    </div>
+
                 </div>
 
                 <!-- Right Column: Expanding Image Card Accordion -->
@@ -2260,6 +2396,61 @@
                         <div class="hb-accordion-dot" onclick="activateHeroCard(1);"></div>
                         <div class="hb-accordion-dot" onclick="activateHeroCard(2);"></div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         2B. DEDICATED PERFORMANCE METRICS SECTION (Image 4 Reference: 1000+, 300+, 20+)
+         ========================================================================== -->
+    <section class="hb-stats-section" id="almiqatStatsSection">
+        <div class="hb-container">
+            <div style="text-align: center; max-width: 720px; margin: 0 auto 36px;">
+                <span class="section-eyebrow t-txt" data-en="PROVEN TRACK RECORD & PERFORMANCE" data-ar="أرقام وإنجازات تعكس الثقة والريادة">PROVEN TRACK RECORD & PERFORMANCE</span>
+                <h2 class="section-headline t-txt" data-en="Delivering Real Estate Excellence Across Sharjah" data-ar="ريادة عقارية وأرقام تعكس ثقة عملائنا ومستثمرينا في الشارقة">
+                    Delivering Real Estate Excellence Across Sharjah
+                </h2>
+                <p style="color: var(--hb-muted); margin-top: 12px; font-size: 15.5px; line-height: 1.6;" class="t-txt" data-en="Over a decade of trusted property brokerage, zero-vacancy asset management, and thriving residential communities in New Muwailah, Al Majaz, and prime Sharjah districts." data-ar="أكثر من عقد من التميز في إدارة وتأجير العقارات، وتحقيق أعلى عوائد استثمارية، وتطوير مجتمعات سكنية وتجارية متكاملة في قلب مويلح والمجاز وكافة مناطق الشارقة.">
+                    Over a decade of trusted property brokerage, zero-vacancy asset management, and thriving residential communities in New Muwailah, Al Majaz, and prime Sharjah districts.
+                </p>
+            </div>
+
+            <div class="hb-stats-counter-grid">
+                <!-- Card 1: 1,000+ Happy Customers -->
+                <div class="hb-stat-card-featured">
+                    <div class="hb-stat-card-badge">CLIENT TRUST</div>
+                    <div class="hb-stat-number-wrap">
+                        <span class="hb-stat-num" data-target="1000">1,000</span><span class="hb-stat-plus">+</span>
+                    </div>
+                    <h3 class="hb-stat-title t-txt" data-en="Happy Customers" data-ar="عميل ومستثمر سعيد">Happy Customers</h3>
+                    <p class="hb-stat-desc t-txt" data-en="Satisfied landlords, property buyers, and long-term tenants across Sharjah." data-ar="ملاك ومستثمرون ومستأجرون يثقون بخدماتنا واستشاراتنا العقارية المعتمدة.">
+                        Satisfied landlords, property buyers, and long-term tenants across Sharjah.
+                    </p>
+                </div>
+
+                <!-- Card 2: 300+ Apartments -->
+                <div class="hb-stat-card-featured">
+                    <div class="hb-stat-card-badge">PORTFOLIO UNITS</div>
+                    <div class="hb-stat-number-wrap">
+                        <span class="hb-stat-num" data-target="300">300</span><span class="hb-stat-plus">+</span>
+                    </div>
+                    <h3 class="hb-stat-title t-txt" data-en="Apartments & Units" data-ar="شقة ووحدة سكنية">Apartments</h3>
+                    <p class="hb-stat-desc t-txt" data-en="Residential and executive apartments maintained under active asset management." data-ar="وحدات سكنية وتنفيذية تحت الإدارة المباشرة والصيانة الدورية من فريق الميقات.">
+                        Residential and executive apartments maintained under active asset management.
+                    </p>
+                </div>
+
+                <!-- Card 3: 20+ Properties -->
+                <div class="hb-stat-card-featured">
+                    <div class="hb-stat-card-badge">DEVELOPMENTS</div>
+                    <div class="hb-stat-number-wrap">
+                        <span class="hb-stat-num" data-target="20">20</span><span class="hb-stat-plus">+</span>
+                    </div>
+                    <h3 class="hb-stat-title t-txt" data-en="Properties" data-ar="مشروع وعقار معتمد">Properties</h3>
+                    <p class="hb-stat-desc t-txt" data-en="Signature commercial towers, retail plazas, and luxury developments." data-ar="أبراج ومراكز تجارية ومجمعات سكنية متميزة تم تسويقها وإدارتها بنجاح.">
+                        Signature commercial towers, retail plazas, and luxury developments.
+                    </p>
                 </div>
             </div>
         </div>
@@ -3358,91 +3549,6 @@
         </div>
     </div>
 
-    <!-- MODAL 3: Maintenance Support Request -->
-    <div id="almiqatMaintenanceModal" class="almiqat-modal-overlay">
-        <div class="almiqat-modal-dialog">
-            <button type="button" class="almiqat-modal-close" onclick="closeMaintenanceModal();">&times;</button>
-            <div style="padding: 36px 30px;">
-                <div style="text-align: center; margin-bottom: 24px;">
-                    <div style="width: 52px; height: 52px; margin: 0 auto 12px; background: rgba(180, 83, 9, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--hb-clay); font-size: 22px;">
-                        🔧
-                    </div>
-                    <h3 class="headline-display" style="font-size: 24px;" class="t-txt" data-en="Technical Maintenance Request" data-ar="طلب صيانة فنية للعقار">Technical Maintenance Request</h3>
-                    <p style="font-size: 13.5px; color: var(--hb-muted); margin-top: 4px;">24/7 Rapid Response for Al Miqat Managed Properties</p>
-                </div>
-
-                <form onsubmit="handleMaintenanceSubmit(event);">
-                    <div class="admin-field-group">
-                        <label class="t-txt" data-en="Building / Unit Number *" data-ar="اسم البناية / رقم الوحدة *">Building / Unit Number *</label>
-                        <input type="text" id="maintUnit" class="admin-input" required placeholder="e.g. Muwailah Tower 4, Apt 302">
-                    </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                        <div class="admin-field-group">
-                            <label class="t-txt" data-en="Tenant Name *" data-ar="اسم المستأجر *">Tenant Name *</label>
-                            <input type="text" id="maintName" class="admin-input" required placeholder="Your Name">
-                        </div>
-                        <div class="admin-field-group">
-                            <label class="t-txt" data-en="Phone / WhatsApp *" data-ar="رقم الهاتف *">Phone / WhatsApp *</label>
-                            <input type="tel" id="maintPhone" class="admin-input" required placeholder="+971 50 000 0000">
-                        </div>
-                    </div>
-                    <div class="admin-field-group">
-                        <label class="t-txt" data-en="Maintenance Description *" data-ar="وصف المشكلة الفنية *">Maintenance Description *</label>
-                        <textarea id="maintDesc" class="admin-textarea" rows="3" required placeholder="Describe the issue (e.g. AC cooling, plumbing, electrical)..."></textarea>
-                    </div>
-                    <button type="submit" class="hb-btn hb-btn-primary" style="width: 100%;">
-                        <span class="t-txt" data-en="Dispatch Maintenance Ticket" data-ar="إرسال طلب الصيانة الفورية">Dispatch Maintenance Ticket</span>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL 4: Landlord Listing Portal -->
-    <div id="almiqatLandlordModal" class="almiqat-modal-overlay">
-        <div class="almiqat-modal-dialog">
-            <button type="button" class="almiqat-modal-close" onclick="closeLandlordModal();">&times;</button>
-            <div style="padding: 36px 30px;">
-                <div style="text-align: center; margin-bottom: 24px;">
-                    <div style="width: 52px; height: 52px; margin: 0 auto 12px; background: rgba(13, 75, 87, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--hb-teal); font-size: 22px;">
-                        🔑
-                    </div>
-                    <h3 class="headline-display" style="font-size: 24px;" class="t-txt" data-en="List Your Property With Al Miqat" data-ar="سجل عقارك للإدارة والتأجير مع الميقات">List Your Property With Al Miqat</h3>
-                    <p style="font-size: 13.5px; color: var(--hb-muted); margin-top: 4px;">Zero Vacancy Commitment & Full Fiscal Transparency</p>
-                </div>
-
-                <form onsubmit="handleLandlordSubmit(event);">
-                    <div class="admin-field-group">
-                        <label class="t-txt" data-en="Owner Name *" data-ar="اسم المالك الكريم *">Owner Name *</label>
-                        <input type="text" id="landlordName" class="admin-input" required placeholder="Your Name">
-                    </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                        <div class="admin-field-group">
-                            <label class="t-txt" data-en="Phone / WhatsApp *" data-ar="رقم الهاتف *">Phone / WhatsApp *</label>
-                            <input type="tel" id="landlordPhone" class="admin-input" required placeholder="+971 50 000 0000">
-                        </div>
-                        <div class="admin-field-group">
-                            <label class="t-txt" data-en="Property Type" data-ar="نوع العقار">Property Type</label>
-                            <select id="landlordType" class="admin-select">
-                                <option value="Residential Building">Residential Building (بناية سكنية كاملة)</option>
-                                <option value="Individual Apartment">Individual Apartment (شقة سكنية)</option>
-                                <option value="Commercial Plaza">Commercial Plaza / Shops (محلات أو بلازا تجارية)</option>
-                                <option value="Villa">Luxury Villa (فيلا سكنية)</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="admin-field-group">
-                        <label class="t-txt" data-en="Property Location in Sharjah" data-ar="موقع العقار في الشارقة">Property Location in Sharjah</label>
-                        <input type="text" id="landlordLocation" class="admin-input" placeholder="e.g. New Muwailah, Al Majaz, Al Khan...">
-                    </div>
-                    <button type="submit" class="hb-btn hb-btn-primary" style="width: 100%;">
-                        <span class="t-txt" data-en="Submit Property For Management" data-ar="تسجيل العقار لدى إدارة الميقات">Submit Property For Management</span>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-
     <!-- MODAL 5: Property Details Drawer / Lightbox -->
     <div id="almiqatPropertyDetailsModal" class="almiqat-modal-overlay">
         <div class="almiqat-modal-dialog">
@@ -4053,29 +4159,16 @@
         }
 
         function openMaintenanceModal() {
-            document.getElementById('almiqatMaintenanceModal').style.display = 'flex';
+            openEnquiryModal('Technical Maintenance Request');
         }
         function closeMaintenanceModal() {
-            document.getElementById('almiqatMaintenanceModal').style.display = 'none';
+            closeEnquiryModal();
         }
-        function handleMaintenanceSubmit(e) {
-            e.preventDefault();
-            closeMaintenanceModal();
-            showToast('🔧 Maintenance ticket dispatched to Al Miqat emergency team.');
-            e.target.reset();
-        }
-
         function openLandlordModal() {
-            document.getElementById('almiqatLandlordModal').style.display = 'flex';
+            openEnquiryModal('List Your Property With Al Miqat');
         }
         function closeLandlordModal() {
-            document.getElementById('almiqatLandlordModal').style.display = 'none';
-        }
-        function handleLandlordSubmit(e) {
-            e.preventDefault();
-            closeLandlordModal();
-            showToast('🔑 Property submitted. Our building management division will contact you.');
-            e.target.reset();
+            closeEnquiryModal();
         }
 
         function toggleMobileNav() {
@@ -5576,7 +5669,116 @@
         }
 
         // --- 15. INITIALIZATION ON DOM READY ---
+        
+        // ==========================================================================
+        // ASCENDING NUMBER COUNTER ENGINE (Runs Smoothly on Scroll & Load)
+        // ==========================================================================
+        function runStatsCounterAnimation() {
+            const numElements = document.querySelectorAll('.hb-stat-num');
+            if (numElements.length === 0) return;
+
+            numElements.forEach(el => {
+                const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+                let start = 0;
+                const duration = 2000;
+                let startTimestamp = null;
+
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    // easeOutQuart: rapid ascending start, smooth arrival at target
+                    const ease = 1 - Math.pow(1 - progress, 4);
+                    const current = Math.floor(ease * (target - start) + start);
+                    el.innerText = current.toLocaleString();
+
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    } else {
+                        el.innerText = target.toLocaleString();
+                    }
+                };
+                window.requestAnimationFrame(step);
+            });
+        }
+
+        function setupStatsCounterObserver() {
+            const section = document.getElementById('almiqatStatsSection');
+            if (!section) {
+                runStatsCounterAnimation();
+                return;
+            }
+
+            let hasAnimated = false;
+            const triggerAnimation = () => {
+                if (hasAnimated) return;
+                hasAnimated = true;
+                runStatsCounterAnimation();
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    triggerAnimation();
+                }
+            }, { threshold: 0.15 });
+
+            observer.observe(section);
+
+            // Also check if already in viewport on load
+            setTimeout(() => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight + 100) {
+                    triggerAnimation();
+                }
+            }, 300);
+        }
+
+        // --- STRICT POPUP MODAL CONTROLLERS ---
+        function openAdminAccessModal() {
+            const modal = document.getElementById('almiqatAdminAccessModal');
+            if (modal) {
+                modal.classList.add('open');
+                modal.style.setProperty('display', 'flex', 'important');
+            }
+        }
+
+        function closeAdminAccessModal() {
+            const modal = document.getElementById('almiqatAdminAccessModal');
+            if (modal) {
+                modal.classList.remove('open');
+                modal.style.setProperty('display', 'none', 'important');
+            }
+        }
+
+        function openEnquiryModal(title = 'General Inquiry') {
+            const propInput = document.getElementById('enquiryPropTitleInput');
+            if (propInput) propInput.value = title;
+            const titleEl = document.getElementById('enquiryModalTargetTitle');
+            if (titleEl) titleEl.innerText = title;
+            const modal = document.getElementById('almiqatEnquiryModal');
+            if (modal) {
+                modal.classList.add('open');
+                modal.style.setProperty('display', 'flex', 'important');
+            }
+        }
+
+        function closeEnquiryModal() {
+            const modal = document.getElementById('almiqatEnquiryModal');
+            if (modal) {
+                modal.classList.remove('open');
+                modal.style.setProperty('display', 'none', 'important');
+            }
+        }
+
+        // Close on clicking backdrop
+        window.addEventListener('click', (e) => {
+            const adminModal = document.getElementById('almiqatAdminAccessModal');
+            const enqModal = document.getElementById('almiqatEnquiryModal');
+            if (adminModal && e.target === adminModal) closeAdminAccessModal();
+            if (enqModal && e.target === enqModal) closeEnquiryModal();
+        });
+
         document.addEventListener('DOMContentLoaded', () => {
+            setupStatsCounterObserver();
             const yr = document.getElementById('currYear');
             if (yr) yr.innerText = new Date().getFullYear();
 
