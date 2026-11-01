@@ -2223,6 +2223,193 @@
             }
         }
 
+    
+/* SQUARED EXECUTIVE ADMIN PORTAL STYLING */
+.admin-executive-dialog {
+    background: #FFFFFF !important;
+    border-radius: 4px !important;
+    border: 1px solid rgba(13, 75, 87, 0.22) !important;
+    box-shadow: 0 25px 60px rgba(11, 19, 32, 0.35) !important;
+    overflow: hidden !important;
+    max-width: 520px !important;
+}
+.almiqat-modal-dialog-large.admin-logged-in {
+    max-width: 1100px !important;
+}
+.admin-login-wrapper {
+    padding: 44px 36px 36px !important;
+    background: #FFFFFF;
+}
+.admin-header-badge {
+    text-align: center;
+    margin-bottom: 28px;
+}
+.admin-lock-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 12px;
+    background: rgba(13, 75, 87, 0.08);
+    border: 1px solid rgba(13, 75, 87, 0.2);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--hb-teal);
+}
+.admin-top-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--hb-gold);
+    margin-bottom: 6px;
+    font-family: 'Outfit', -apple-system, sans-serif;
+}
+.admin-login-title {
+    font-family: 'Cinzel', 'Plus Jakarta Sans', serif !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    color: #0B1320 !important;
+    letter-spacing: -0.2px;
+    margin-bottom: 6px;
+}
+.admin-login-subtitle {
+    font-size: 13px !important;
+    color: #64748B !important;
+    line-height: 1.5;
+    margin: 0;
+}
+.admin-alert-banner {
+    padding: 12px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    background: #FEF2F2;
+    color: #991B1B;
+    border: 1px solid #FCA5A5;
+}
+.admin-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.admin-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.admin-field-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.admin-label {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #1E293B;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+.admin-forgot-link {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--hb-teal);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.admin-forgot-link:hover {
+    color: var(--hb-gold);
+    text-decoration: underline;
+}
+.admin-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.admin-input-icon {
+    position: absolute;
+    left: 14px;
+    color: #94A3B8;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+.admin-input {
+    width: 100% !important;
+    height: 46px !important;
+    padding: 0 14px 0 42px !important;
+    border-radius: 4px !important;
+    border: 1.5px solid #CBD5E1 !important;
+    background: #F8FAFC !important;
+    font-size: 14px !important;
+    color: #0F172A !important;
+    font-family: inherit !important;
+    box-sizing: border-box !important;
+    transition: all 0.2s ease !important;
+}
+.admin-input:focus {
+    outline: none !important;
+    border-color: var(--hb-teal) !important;
+    background: #FFFFFF !important;
+    box-shadow: 0 0 0 3px rgba(13, 75, 87, 0.12) !important;
+}
+.admin-input::placeholder {
+    color: #94A3B8 !important;
+    font-weight: 400 !important;
+}
+.admin-toggle-pass-btn {
+    position: absolute;
+    right: 12px;
+    background: transparent;
+    border: none;
+    color: #64748B;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+.admin-toggle-pass-btn:hover {
+    color: var(--hb-teal);
+}
+.admin-submit-btn {
+    width: 100%;
+    height: 48px;
+    background: var(--hb-teal);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6px;
+    box-shadow: 0 4px 14px rgba(13, 75, 87, 0.28);
+    transition: all 0.2s ease;
+}
+.admin-submit-btn:hover {
+    background: #08343C;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(13, 75, 87, 0.35);
+}
+.admin-security-footer {
+    text-align: center;
+    margin-top: 14px;
+    font-size: 11.5px;
+    color: #64748B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.2px;
+}
+
     </style>
 </head>
 <body>
@@ -2516,9 +2703,109 @@
                 </div>
             </div>
 
-            <!-- Dynamic Services Grid -->
+                        <!-- Dynamic Services Grid (Standardized from Official Al Miqat Profile) -->
             <div class="almiqat-services-grid" id="almiqatServicesGrid">
-                <!-- Rendered dynamically from SERVICES array -->
+                <!-- Service 1: Property Management -->
+                <div class="almiqat-service-card">
+                    <div>
+                        <div class="almiqat-service-num">01</div>
+                        <div class="almiqat-service-icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 9h6M9 13h6M9 17h6"/></svg>
+                        </div>
+                        <h3 class="almiqat-service-title t-txt" data-en="Property Management" data-ar="إدارة العقارات المعتمدة">Property Management</h3>
+                        <p class="almiqat-service-desc t-txt" data-en="Full-scope building administration, SEWA utility synchronization, certified tenant screening, lease contract attestations, and preventative maintenance oversight." data-ar="إدارة متكاملة للعقارات والبنايات، مطابقة حسابات سيوا، تدقيق وتصديق عقود الإيجار، وصيانة دورية شاملة في الشارقة.">
+                            Full-scope building administration, SEWA utility synchronization, certified tenant screening, lease contract attestations, and preventative maintenance oversight.
+                        </p>
+                    </div>
+                    <div class="almiqat-service-action" onclick="openEnquiryModal('Property Management');">
+                        <span class="t-txt" data-en="Request Service Advisory &rarr;" data-ar="طلب استشارة في هذه الخدمة &larr;">Request Service Advisory &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Service 2: Capital Improvement -->
+                <div class="almiqat-service-card">
+                    <div>
+                        <div class="almiqat-service-num">02</div>
+                        <div class="almiqat-service-icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <h3 class="almiqat-service-title t-txt" data-en="Capital Improvement" data-ar="التحسين والتطوير الرأسمالي">Capital Improvement</h3>
+                        <p class="almiqat-service-desc t-txt" data-en="Targeted architectural renovations, mechanical modernization, and MEP enhancements engineered to elevate building valuation and maximize rental income yield." data-ar="تطوير معماري وهندسي وتحديث المرافق والأنظمة الكهروميكانيكية لرفع القيمة السوقية للعقار وتعظيم الإيرادات الإيجارية.">
+                            Targeted architectural renovations, mechanical modernization, and MEP enhancements engineered to elevate building valuation and maximize rental income yield.
+                        </p>
+                    </div>
+                    <div class="almiqat-service-action" onclick="openEnquiryModal('Capital Improvement');">
+                        <span class="t-txt" data-en="Request Service Advisory &rarr;" data-ar="طلب استشارة في هذه الخدمة &larr;">Request Service Advisory &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Service 3: Real Estate Financing -->
+                <div class="almiqat-service-card">
+                    <div>
+                        <div class="almiqat-service-num">03</div>
+                        <div class="almiqat-service-icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M5 20V8l7-5 7 5v12M9 12h6M9 16h6"/></svg>
+                        </div>
+                        <h3 class="almiqat-service-title t-txt" data-en="Real Estate Financing" data-ar="التمويل والاستثمار العقاري">Real Estate Financing</h3>
+                        <p class="almiqat-service-desc t-txt" data-en="Strategic mortgage advisory and institutional bank financing facilitation through premier UAE financial institutions for residential and commercial acquisitions." data-ar="استشارات تمويلية متخصصة وتسهيل القروض العقارية بالتعاون مع كبرى المصارف بالدولة لتمويل الاستحواذات السكنية والتجارية.">
+                            Strategic mortgage advisory and institutional bank financing facilitation through premier UAE financial institutions for residential and commercial acquisitions.
+                        </p>
+                    </div>
+                    <div class="almiqat-service-action" onclick="openEnquiryModal('Real Estate Financing');">
+                        <span class="t-txt" data-en="Request Service Advisory &rarr;" data-ar="طلب استشارة في هذه الخدمة &larr;">Request Service Advisory &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Service 4: Recover Asset Value -->
+                <div class="almiqat-service-card">
+                    <div>
+                        <div class="almiqat-service-num">04</div>
+                        <div class="almiqat-service-icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3 class="almiqat-service-title t-txt" data-en="Recover Asset Value" data-ar="استرداد وتعظيم قيمة الأصول">Recover Asset Value</h3>
+                        <p class="almiqat-service-desc t-txt" data-en="Repositioning distressed and underperforming properties through active tenant retention, market-aligned pricing repositioning, and structured turnaround." data-ar="إعادة هيكلة العقارات منخفضة الإشغال، وتحسين نسب التحصيل، وجذب مستأجرين نوعيين لاسترداد القيمة الاستثمارية الكاملة.">
+                            Repositioning distressed and underperforming properties through active tenant retention, market-aligned pricing repositioning, and structured turnaround.
+                        </p>
+                    </div>
+                    <div class="almiqat-service-action" onclick="openEnquiryModal('Recover Asset Value');">
+                        <span class="t-txt" data-en="Request Service Advisory &rarr;" data-ar="طلب استشارة في هذه الخدمة &larr;">Request Service Advisory &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Service 5: Financial Reporting -->
+                <div class="almiqat-service-card">
+                    <div>
+                        <div class="almiqat-service-num">05</div>
+                        <div class="almiqat-service-icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        </div>
+                        <h3 class="almiqat-service-title t-txt" data-en="Financial Reporting" data-ar="التقارير المالية والتحصيل">Financial Reporting</h3>
+                        <p class="almiqat-service-desc t-txt" data-en="Transparent monthly disbursement statements, automated rental collection tracking, tenant ledger auditing, and rigorous fiscal accounting." data-ar="كشوفات مالية شهرية دورية وشفافة، تتبع التحصيل والشيكات، وإدارة متكاملة للسجلات المالية بدقة واحترافية.">
+                            Transparent monthly disbursement statements, automated rental collection tracking, tenant ledger auditing, and rigorous fiscal accounting.
+                        </p>
+                    </div>
+                    <div class="almiqat-service-action" onclick="openEnquiryModal('Financial Reporting');">
+                        <span class="t-txt" data-en="Request Service Advisory &rarr;" data-ar="طلب استشارة في هذه الخدمة &larr;">Request Service Advisory &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Service 6: Buying, Selling & Leasing -->
+                <div class="almiqat-service-card">
+                    <div>
+                        <div class="almiqat-service-num">06</div>
+                        <div class="almiqat-service-icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3-3.5 3.5z"/></svg>
+                        </div>
+                        <h3 class="almiqat-service-title t-txt" data-en="Buying, Selling & Leasing" data-ar="الوساطة في البيع، الشراء والتأجير">Buying, Selling & Leasing</h3>
+                        <p class="almiqat-service-desc t-txt" data-en="Government-certified brokerage representation in prime Sharjah districts including New Muwailah Commercial, Al Majaz, and Al Khan waterfronts." data-ar="وساطة عقارية معتمدة ومرخصة في أبرز مناطق الشارقة مثل مويلح التجارية الجديدة، واجهة المجاز المائية، والخان.">
+                            Government-certified brokerage representation in prime Sharjah districts including New Muwailah Commercial, Al Majaz, and Al Khan waterfronts.
+                        </p>
+                    </div>
+                    <div class="almiqat-service-action" onclick="openEnquiryModal('Buying, Selling & Leasing');">
+                        <span class="t-txt" data-en="Request Service Advisory &rarr;" data-ar="طلب استشارة في هذه الخدمة &larr;">Request Service Advisory &rarr;</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -2938,46 +3225,67 @@
     </footer>
 
     <!-- ==========================================================================
-         14. MODALS & ADMIN SUITE (Secure Login almiqatserver@gmail.com / almiqat@123)
+         14. MODALS & ADMIN SUITE (Staff & Management Portal)
          ========================================================================== -->
 
     <!-- MODAL 1: Admin & Staff Portal (/admin or #admin) -->
     <div id="almiqatAdminAccessModal" class="almiqat-modal-overlay">
-        <div class="almiqat-modal-dialog almiqat-modal-dialog-large">
-            <button type="button" class="almiqat-modal-close" onclick="closeAdminAccessModal();">&times;</button>
+        <div class="almiqat-modal-dialog almiqat-modal-dialog-large admin-executive-dialog">
+            <button type="button" class="almiqat-modal-close" onclick="closeAdminAccessModal();" aria-label="Close Modal">&times;</button>
             
-            <!-- VIEW A: SECURE LOGIN GATE -->
-            <div id="adminLoginView" style="padding: 40px 32px;">
-                <div style="text-align: center; margin-bottom: 28px;">
-                    <div style="width: 60px; height: 60px; margin: 0 auto 14px; background: rgba(13, 75, 87, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--hb-teal); font-size: 24px;">
-                        🔒
+            <!-- VIEW A: SECURE LOGIN GATE (Squared Executive Luxury Aesthetic) -->
+            <div id="adminLoginView" class="admin-login-wrapper">
+                <div class="admin-header-badge">
+                    <div class="admin-lock-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
                     </div>
-                    <h3 class="headline-display" style="font-size: 26px; margin-bottom: 6px;" class="t-txt" data-en="Al Miqat Staff & Admin Portal" data-ar="بوابة الدخول الأمنية لإدارة الميقات">Al Miqat Staff & Admin Portal</h3>
-                    <p style="font-size: 14px; color: var(--hb-muted);" class="t-txt" data-en="Restricted administrative access for Al Miqat Real Estate management" data-ar="منطقة دخول محمية ومقتصرة على موظفي وإدارة الميقات للعقارات">Restricted administrative access for Al Miqat Real Estate management</p>
+                    <span class="admin-top-tag">AL MIQAT INTERNAL SYSTEMS</span>
+                    <h3 class="admin-login-title t-txt" data-en="Staff & Admin Portal" data-ar="بوابة الإدارة والموظفين المعتمدة">Staff & Admin Portal</h3>
+                    <p class="admin-login-subtitle t-txt" data-en="Authorized access only. All actions are securely logged and audited." data-ar="دخول مخصص للموظفين والإدارة. كافة العمليات مشفرة ومسجلة نظامياً.">Authorized access only. All actions are securely logged and audited.</p>
                 </div>
 
-                <div id="adminLoginAlert" style="display: none; padding: 12px 16px; border-radius: 6px; font-size: 13.5px; margin-bottom: 18px;"></div>
+                <div id="adminLoginAlert" class="admin-alert-banner" style="display: none;"></div>
 
-                <form onsubmit="handleAdminLogin(event);" style="max-width: 440px; margin: 0 auto;">
+                <form onsubmit="handleAdminLogin(event);" class="admin-login-form">
                     <div class="admin-field-group">
-                        <label class="t-txt" data-en="Staff Email / Username *" data-ar="البريد الإلكتروني المعتمد للموظف *">Staff Email / Username *</label>
-                        <input type="text" id="adminInputUser" class="admin-input" required placeholder="almiqatserver@gmail.com">
-                    </div>
-
-                    <div class="admin-field-group">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
-                            <label class="t-txt" data-en="Staff Password *" data-ar="كلمة المرور *">Staff Password *</label>
-                            <a href="javascript:void(0)" onclick="switchAdminView('otp');" style="font-size: 12.5px; color: var(--hb-clay); font-weight: 700;" class="t-txt" data-en="Forgot Password?" data-ar="نسيت كلمة المرور؟">Forgot Password?</a>
+                        <label class="admin-label t-txt" data-en="Official Email or Username *" data-ar="البريد الإلكتروني المعتمد أو اسم المستخدم *">Official Email or Username *</label>
+                        <div class="admin-input-wrap">
+                            <span class="admin-input-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </span>
+                            <input type="text" id="adminInputUser" class="admin-input" required autocomplete="username" placeholder="name@almiqat.ae">
                         </div>
-                        <input type="password" id="adminInputPass" class="admin-input" required placeholder="Enter password (e.g. almiqat@123)">
                     </div>
 
-                    <button type="submit" class="hb-btn hb-btn-primary" style="width: 100%; margin-top: 10px;">
-                        <span>🔒 <span class="t-txt" data-en="Secure Log In" data-ar="تسجيل الدخول الآمن">Secure Log In</span></span>
+                    <div class="admin-field-group">
+                        <div class="admin-field-header">
+                            <label class="admin-label t-txt" data-en="Access Password *" data-ar="كلمة المرور السرية *">Access Password *</label>
+                            <a href="javascript:void(0)" onclick="switchAdminView('otp');" class="admin-forgot-link t-txt" data-en="Reset Password?" data-ar="نسيت كلمة المرور؟">Reset Password?</a>
+                        </div>
+                        <div class="admin-input-wrap">
+                            <span class="admin-input-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            </span>
+                            <input type="password" id="adminInputPass" class="admin-input" required autocomplete="current-password" placeholder="••••••••••••">
+                            <button type="button" class="admin-toggle-pass-btn" onclick="toggleAdminPassVisibility();" title="Toggle password view" aria-label="Toggle password visibility">
+                                <svg id="adminPassEyeSvg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="admin-submit-btn">
+                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 6px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg><span class="t-txt" data-en="Authenticate & Enter" data-ar="التحقق والدخول للنظام">Authenticate & Enter</span></span>
                     </button>
 
-                    <div style="text-align: center; margin-top: 18px; font-size: 13px; color: var(--hb-muted);">
-                        Authorized Admin: <code>almiqatserver@gmail.com</code> &bull; Password: <code>almiqat@123</code>
+                    <div class="admin-security-footer">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -1px; margin-right: 4px; color: var(--hb-teal);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span>256-Bit Encrypted Administrative Session &bull; Al Miqat Real Estate L.L.C.</span>
                     </div>
                 </form>
             </div>
@@ -2989,7 +3297,7 @@
                     <p style="font-size: 13.5px; color: var(--hb-muted); margin-top: 6px;">A verification OTP will be sent to the verified company mailbox.</p>
                 </div>
                 <div id="otpDispatchedAlert" style="display:none; background:#FEF3C7; border:1px solid #FCD34D; padding:12px; border-radius:6px; font-size:13px; color:#92400E; margin-bottom:16px;">
-                    Notification: Code <strong id="simulatedOtpDisplay" style="font-size:16px; letter-spacing:2px;">-</strong> dispatched to <code>almiqatserver@gmail.com</code>
+                    Security Notification: An OTP has been dispatched to the registered company administrative email.
                 </div>
                 <button type="button" class="hb-btn hb-btn-primary" onclick="sendSimulatedOtp();" style="width:100%;">
                     <span>Generate & Send OTP</span>
@@ -4202,7 +4510,7 @@
             if (e.key === 'Enter') triggerHeroSearch();
         }
 
-        // --- 14. ADMIN & STAFF SUITE CONTROLLERS (Secure Login: almiqatserver@gmail.com / almiqat@123) ---
+        // --- 14. ADMIN & STAFF SUITE CONTROLLERS ---
         function openAdminAccessModal() {
             document.getElementById('almiqatAdminAccessModal').style.display = 'flex';
             checkAdminSession();
@@ -4231,6 +4539,20 @@
             }
         }
 
+        
+        function toggleAdminPassVisibility() {
+            const passInput = document.getElementById('adminInputPass');
+            const icon = document.getElementById('adminPassToggleIcon');
+            if (!passInput) return;
+            if (passInput.type === 'password') {
+                passInput.type = 'text';
+                if (icon) icon.innerText = '🙈';
+            } else {
+                passInput.type = 'password';
+                if (icon) icon.innerText = '👁️';
+            }
+        }
+
         function handleAdminLogin(e) {
             e.preventDefault();
             const u = document.getElementById('adminInputUser').value.trim();
@@ -4253,7 +4575,7 @@
                 alertBox.style.display = 'block';
                 alertBox.style.background = '#FEE2E2';
                 alertBox.style.color = '#B91C1C';
-                alertBox.innerText = 'Invalid username or password. Authorized Login: almiqatserver@gmail.com / almiqat@123';
+                alertBox.innerText = 'Access denied: Invalid credentials. Authorized personnel only.';
             }
         }
 
